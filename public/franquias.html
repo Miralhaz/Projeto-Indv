@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="shortcut icon" href="assets/icon/logo-icon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Franquias da NBA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styleFranquias.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/imgs/logo.png" class="img-logo">
+                <span> NBA Info </span>
+            </div>
+            <nav class="navbar">
+                <a href="index.html">Início</a>
+                <a href="#" class="active">Franquias</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner-franquias">
+        <div class="container-franquias">
+            <h2>Franquias da NBA</h2>
+            <p>A NBA é composta por 30 franquias, divididas entre as conferências Leste e Oeste.</p>
+        </div>
+        
+        <br>
+        <br>
+
+        <div class="confs">
+            <div class="conf-leste">
+                <h3>Conferência Leste</h3>
+                <h4>Selecione um time da Conferência Leste que queira saber sobre:</h4>
+                <select class="cf-button" name="conferência-leste" id="cf_leste">
+                    <option value="ah">Atlanta Hawks</option>
+                    <option value="bc">Boston Celtics</option>
+                    <option value="bn">Brooklyn Nets</option>
+                    <option value="ch">Charlotte Hornets</option>
+                    <option value="cb">Chicago Bulls</option>
+                    <option value="cc">Cleveland Cavaliers</option>
+                    <option value="dp">Detroit Pistons</option>
+                    <option value="ip">Indiana Pacers</option>
+                    <option value="mh">Miami Heat</option>
+                    <option value="mb">Milwaukee Bucks</option>
+                    <option value="nyk">New York Knicks</option>
+                    <option value="om">Orlando Magic</option>
+                    <option value="p76">Philadelphia 76ers</option>
+                    <option value="tr">Toronto Raptors</option>
+                    <option value="ww">Washington Wizards</option>
+                </select>
+
+                <div id="resumo"></div>
+            </div>
+
+            <div class="conf-oeste">
+                <h3>Conferência Oeste</h3>
+                <h4>Selecione um time da Conferência Oeste que queira saber sobre:</h4>
+                <select class="cf-button" name="conferência-oeste" id="cf_oeste">
+                    <option value="dm">Dallas Mavericks</option>
+                    <option value="dn">Denver Nuggets</option>
+                    <option value="gsw">Golden State Warriors</option>
+                    <option value="hr">Houston Rockets</option>
+                    <option value="lac">Los Angeles Clippers</option>
+                    <option value="lal">Los Angeles Lakers</option>
+                    <option value="mg">Memphis Grizzlies</option>
+                    <option value="mt">Minnesota Timberwolves</option>
+                    <option value="nop">New Orleans Pelicans</option>
+                    <option value="okc">Oklahoma City Thunder</option>
+                    <option value="ps">Phoenix Suns</option>
+                    <option value="ptb">Portland Trail Blazers</option>
+                    <option value="sk">Sacramento Kings</option>
+                    <option value="sas">San Antonio Spurs</option>
+                    <option value="uj">Utah Jazz</option>
+                </select>
+
+                <div id="resumo2"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 NBA Info. </p>
+      <p>Desenvolvido por Lucas Miralha.</p>
+    </div>
+  </footer>
+
+</body>
+<script src="js/franquias.js"></script>
+</html>

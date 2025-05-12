@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafio NBA</title>
+  <link rel="stylesheet" href="css/styleQuiz.css" />
+  <script src="js/quiz.js" defer></script>
+</head>
+
+<body onload="prepararQuiz()">
+  <header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="assets/imgs/logo.png" class="img-logo">
+            <span> NBA Info </span>
+        </div>
+      <nav class="navbar">
+        <a href="index.html">Início</a>
+        <a href="franquias.html">Franquias</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteudo-principal">
+    <section id="quiz-container">
+      <button id="iniciar-btn" onclick="iniciarQuiz()">Começar o Quiz da NBA</button>
+
+      <div id="bloco-pergunta" style="display: none;">
+        <p id="numero-pergunta"></p>
+        <h2 id="texto-pergunta"></h2>
+        <div id="alternativas" class="opcoes"></div>
+
+        <div class="controle-botoes">
+          <button onclick="proximaPergunta()" id="proximo-btn" disabled>Próxima</button>
+        </div>
+      </div>
+
+      <div id="resultado-final" style="display: none;">
+        <h2>Resultado</h2>
+        <p>Acertos: <span id="acertos"></span></p>
+        <p>Erros: <span id="erros"></span></p>
+        <p>Taxa de acertos: <span id="taxa-acertos"></span></p>
+        <button onclick="reiniciarQuiz()">Tentar Novamente</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 NBA Info. </p>
+      <p>Desenvolvido por Lucas Miralha.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="assets/icon/logo-icon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styleCadastro.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/imgs/logo.png" class="img-logo">
+                <span> NBA Info </span>
+            </div>
+            <nav class="navbar">
+                <a href="index.html">Início</a>
+                <a href="franquias.html" class="active">Franquias</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="#">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container-cadastro">
+            <h1><strong> Login </strong></h1>
+            <p> Faça seu login aqui e veja informações em nossa Dashboard! </p>
+            <img src="assets/imgs/nba-login.jpg" alt="">
+            <button onclick="cadastro()"> Cadastrar </button>
+            <a style="text-decoration: none;" href="cadastro.html"> Não Possui Cadastro? Faça um aqui agora! </a>
+        </div>
+
+        <div class="container-cadastro-texto">
+            <h1> Digite aqui as informações: </h1>
+            <label> Nome: </label>
+            <input type="text" id="ipt_nome" placeholder="Digite seu nome aqui!">
+            <label> Email: </label>
+            <input type="text" id="ipt_email" placeholder="Digite seu nome aqui!">
+            <label> Senha: </label>
+            <input type="text" id="ipt_senha" placeholder="Digite sua Senha aqui!">
+        </div>
+    </section>
+
+     <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 NBA Info. </p>
+      <p>Desenvolvido por Lucas Miralha.</p>
+    </div>
+  </footer>
+  
+</body>
+<script src="js/cadastro.js"></script>
+
+</html>
