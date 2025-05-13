@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #ffffff;
+    color: #1d1d1d;
+  
+  }
+  
+  /*HEADER*/
+  
+  .header {
+    background-color: #122855;
+    padding: 16px 0;
+    color: white;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .container .logo span {
+    font-weight: bold;
+    font-size: larger;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .img-logo {
+    height: 60px;
+    width: auto;
+  }
+  
+  /*NAVBAR*/
+  
+  .navbar {
+    margin-top: 12px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+  }
+  
+  .navbar a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e03a3e;
+    transition: width 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #e03a3e;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%;
+  }
+  
+  /* CADASTRO */
+  
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+    min-height: 75.7vh;
+    background-color: #e03a3e;
+    flex-wrap: wrap;
+    gap: 40px; 
+  }
+  
+  .container-cadastro,
+  .container-cadastro-texto {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    width: 360px;
+    max-width: 90%;
+  }
+  
+  .container-cadastro img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .container-cadastro h1,
+  .container-cadastro-texto h1 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #122855;
+  }
+  
+  .container-cadastro button {
+    background-color: #e03a3e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    margin: 16px 0;
+    width: 100%;
+  }
+  
+  .container-cadastro button:hover {
+    background-color:#122855;
+    transform: translateY(-3px);
+  }
+  
+  .container-cadastro a {
+    font-size: 14px;
+    color: #122855;
+    text-align: center;
+    display: block;
+    margin-top: 8px;
+  }
+  
+  .container-cadastro-texto label {
+    display: block;
+    margin: 12px 0 4px;
+    font-weight: 600;
+  }
+  
+  .container-cadastro-texto input {
+    width: 90%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .container-cadastro-texto input:focus {
+    border-color: #122855;
+  }
+  
+  .card_erro {
+    color: red;
+    padding: 10px 10px;
+  }
+  
+  .time-fav {
+    border-radius: 7px;
+    padding: 10px 20px;
+    background-color: #122855;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    font-size: medium;
+  }
+  
+  .time-fav:hover {
+    transform: translateY(3px);
+  }
+
+  .loading-div {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .loading-div img{
+    height: 50px;
+  }
+
+  /* FOOTER */
+  
+  .footer {
+    background-color: #122855;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+  }   

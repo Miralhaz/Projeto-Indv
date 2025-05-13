@@ -165,6 +165,25 @@ body {
   border-color: #122855;
 }
 
+.card_erro {
+  color: red;
+  padding: 10px 10px;
+}
+
+.time-fav {
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: #122855;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  font-size: medium;
+}
+
+.time-fav:hover {
+  transform: translateY(3px);
+}
+
 /* FOOTER */
 
 .footer {

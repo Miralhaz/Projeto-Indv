@@ -44,18 +44,57 @@
             <label> CPF: </label>
             <input type="text" id="ipt_cpf" placeholder="Digite seu CPF aqui!">
             <label> Senha: </label>
-            <input type="text" id="ipt_senha" placeholder="Digite sua Senha aqui!">
+            <input type="password" id="ipt_senha" placeholder="Digite sua Senha aqui!">
             <label> Confirme sua senha: </label>
-            <input type="text" id="ipt_confirm_senha" placeholder="Confirme sua Senha aqui!">
-        </div>
+            <input type="password" id="ipt_confirm_senha" placeholder="Confirme sua Senha aqui!">
+            <label> Escolha seu time favorito: </label>
+            <select class="time-fav" name="time-favorito" id="slt_time_fav">
+                <option value="ah">Atlanta Hawks</option>
+                <option value="bc">Boston Celtics</option>
+                <option value="bn">Brooklyn Nets</option>
+                <option value="ch">Charlotte Hornets</option>
+                <option value="cb">Chicago Bulls</option>
+                <option value="cc">Cleveland Cavaliers</option>
+                <option value="dp">Detroit Pistons</option>
+                <option value="ip">Indiana Pacers</option>
+                <option value="mh">Miami Heat</option>
+                <option value="mb">Milwaukee Bucks</option>
+                <option value="nyk">New York Knicks</option>
+                <option value="om">Orlando Magic</option>
+                <option value="p76">Philadelphia 76ers</option>
+                <option value="tr">Toronto Raptors</option>
+                <option value="ww">Washington Wizards</option>
+                <option value="dm">Dallas Mavericks</option>
+                <option value="dn">Denver Nuggets</option>
+                <option value="gsw">Golden State Warriors</option>
+                <option value="hr">Houston Rockets</option>
+                <option value="lac">Los Angeles Clippers</option>
+                <option value="lal">Los Angeles Lakers</option>
+                <option value="mg">Memphis Grizzlies</option>
+                <option value="mt">Minnesota Timberwolves</option>
+                <option value="nop">New Orleans Pelicans</option>
+                <option value="okc">Oklahoma City Thunder</option>
+                <option value="ps">Phoenix Suns</option>
+                <option value="ptb">Portland Trail Blazers</option>
+                <option value="sk">Sacramento Kings</option>
+                <option value="sas">San Antonio Spurs</option>
+                <option value="uj">Utah Jazz</option>
+            </select>
+  
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                  <span id="mensagem_erro"></span>
+                </div>
+            </div>
+    
     </section>
 
-     <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 NBA Info. </p>
-      <p>Desenvolvido por Lucas Miralha.</p>
-    </div>
-  </footer>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NBA Info. </p>
+            <p>Desenvolvido por Lucas Miralha.</p>
+        </div>
+    </footer>
 
 </body>
 <script src="js/cadastro.js"></script>

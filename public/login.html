@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styleCadastro.css">
+    <link rel="stylesheet" href="css/styleLogin.css">
 </head>
 
 <body>
@@ -43,6 +43,10 @@
             <input type="text" id="ipt_email" placeholder="Digite seu nome aqui!">
             <label> Senha: </label>
             <input type="text" id="ipt_senha" placeholder="Digite sua Senha aqui!">
+
+            <div id="div_aguardar" class="loading-div">
+                <img src="./assets/circle-loading.gif" id="loading-gif" />
+            </div>
         </div>
     </section>
 
@@ -54,6 +58,6 @@
   </footer>
   
 </body>
-<script src="js/cadastro.js"></script>
-
+<script src="js/login.js"></script>
+<script src="js/sessao.js"></script>
 </html>
