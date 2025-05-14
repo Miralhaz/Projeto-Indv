@@ -31,6 +31,7 @@
 
     <div class="janela">
         <div class="header-left">
+
             <h1>NBAInfo</h1>
 
             <div class="hello">
@@ -39,31 +40,28 @@
 
             <div class="btn-nav-white">
                 <a href="./cards.html">
-                    <h3>Aquários</h3>
+                    <h3>Quiz sobre a NBA</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
-
                 <h3>Gráficos</h3>
-
             </div>
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>Fórum</h3>
                 </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
-
         </div>
 
         <div class="dash">
-            <div id="alerta">
-            </div>
+
+            <div id="alerta"></div>
 
             <div class="btns-dash" id="btnAquario">
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
@@ -79,6 +77,7 @@
 </html>
 
 <script>
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     let proximaAtualizacao;
