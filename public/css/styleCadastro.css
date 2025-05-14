@@ -184,6 +184,16 @@ body {
   transform: translateY(3px);
 }
 
+.loading-div  {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.loading-div img {
+  height: 50px;
+}
+
 /* FOOTER */
 
 .footer {

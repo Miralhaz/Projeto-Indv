@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <link rel="shortcut icon" href="assets/icon/logo-icon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-
-    <script src="js/sessao.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="assets/icon/logo-icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styleCadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/sessao.js"></script>
 </head>
 
 <body>
@@ -18,12 +16,12 @@
         <div class="container">
             <div class="logo">
                 <img src="assets/imgs/logo.png" class="img-logo">
-                <span> NBA Info </span>
+                <span>NBA Info</span>
             </div>
             <nav class="navbar">
                 <a href="index.html">Início</a>
-                <a href="franquias.html" class="active">Franquias</a>
-                <a href="#">Cadastro</a>
+                <a href="franquias.html">Franquias</a>
+                <a href="#" class="active">Cadastro</a>
                 <a href="login.html">Login</a>
             </nav>
         </div>
@@ -31,152 +29,190 @@
 
     <section class="banner">
         <div class="container-cadastro">
-            <h1><strong> Cadastro </strong></h1>
-            <p> Faça seu cadastro aqui e veja informações em nossa Dashboard! </p>
+            <h1><strong>Cadastro</strong></h1>
+            <p>Faça seu cadastro aqui e veja informações em nossa Dashboard!</p>
             <img src="assets/imgs/nba-cadastro.jpg" alt="">
-            <button onclick="cadastro()"> Cadastrar </button>
-            <a style="text-decoration: none;" href="login.html"> Possui Cadastro? Entre em nosso blog! </a>
+            <button onclick="cadastro()">Cadastrar</button>
+            <a style="text-decoration: none;" href="login.html">Já possui cadastro? Faça login!</a>
         </div>
 
         <div class="container-cadastro-texto">
-            <h1> Digite aqui as informações: </h1>
-            <label> Nome: </label>
+            <h1>Digite aqui as informações:</h1>
+            <label>Nome:</label>
             <input type="text" id="ipt_nome" placeholder="Digite seu nome aqui!">
-            <label> Email: </label>
-            <input type="text" id="ipt_email" placeholder="Digite seu nome aqui!">
-            <label> CPF: </label>
+            <label>Email:</label>
+            <input type="text" id="ipt_email" placeholder="Digite seu email aqui!">
+            <label>CPF:</label>
             <input type="text" id="ipt_cpf" placeholder="Digite seu CPF aqui!">
-            <label> Senha: </label>
-            <input type="password" id="ipt_senha" placeholder="Digite sua Senha aqui!">
-            <label> Confirme sua senha: </label>
-            <input type="password" id="ipt_confirm_senha" placeholder="Confirme sua Senha aqui!">
-            <label> Escolha seu time favorito: </label>
+            <label>Senha:</label>
+            <input type="password" id="ipt_senha" placeholder="Digite sua senha aqui!">
+            <label>Confirme sua senha:</label>
+            <input type="password" id="ipt_confirm_senha" placeholder="Confirme sua senha!">
+            <label>Escolha seu time favorito:</label>
             <select class="time-fav" name="time-favorito" id="slt_time_fav">
-                <option value="ah">Atlanta Hawks</option>
-                <option value="bc">Boston Celtics</option>
-                <option value="bn">Brooklyn Nets</option>
-                <option value="ch">Charlotte Hornets</option>
-                <option value="cb">Chicago Bulls</option>
-                <option value="cc">Cleveland Cavaliers</option>
-                <option value="dp">Detroit Pistons</option>
-                <option value="ip">Indiana Pacers</option>
-                <option value="mh">Miami Heat</option>
-                <option value="mb">Milwaukee Bucks</option>
-                <option value="nyk">New York Knicks</option>
-                <option value="om">Orlando Magic</option>
-                <option value="p76">Philadelphia 76ers</option>
-                <option value="tr">Toronto Raptors</option>
-                <option value="ww">Washington Wizards</option>
-                <option value="dm">Dallas Mavericks</option>
-                <option value="dn">Denver Nuggets</option>
-                <option value="gsw">Golden State Warriors</option>
-                <option value="hr">Houston Rockets</option>
-                <option value="lac">Los Angeles Clippers</option>
-                <option value="lal">Los Angeles Lakers</option>
-                <option value="mg">Memphis Grizzlies</option>
-                <option value="mt">Minnesota Timberwolves</option>
-                <option value="nop">New Orleans Pelicans</option>
-                <option value="okc">Oklahoma City Thunder</option>
-                <option value="ps">Phoenix Suns</option>
-                <option value="ptb">Portland Trail Blazers</option>
-                <option value="sk">Sacramento Kings</option>
-                <option value="sas">San Antonio Spurs</option>
-                <option value="uj">Utah Jazz</option>
+                <option value="">-- Selecione um time --</option>
+                <option value="1">Atlanta Hawks</option>
+                <option value="2">Boston Celtics</option>
+                <option value="3">Brooklyn Nets</option>
+                <option value="4">Charlotte Hornets</option>
+                <option value="5">Chicago Bulls</option>
+                <option value="6">Cleveland Cavaliers</option>
+                <option value="7">Detroit Pistons</option>
+                <option value="8">Indiana Pacers</option>
+                <option value="9">Miami Heat</option>
+                <option value="10">Milwaukee Bucks</option>
+                <option value="11">New York Knicks</option>
+                <option value="12">Orlando Magic</option>
+                <option value="13">Philadelphia 76ers</option>
+                <option value="14">Toronto Raptors</option>
+                <option value="15">Washington Wizards</option>
+                <option value="16">Dallas Mavericks</option>
+                <option value="17">Denver Nuggets</option>
+                <option value="18">Golden State Warriors</option>
+                <option value="19">Houston Rockets</option>
+                <option value="20">Los Angeles Clippers</option>
+                <option value="21">Los Angeles Lakers</option>
+                <option value="22">Memphis Grizzlies</option>
+                <option value="23">Minnesota Timberwolves</option>
+                <option value="24">New Orleans Pelicans</option>
+                <option value="25">Oklahoma City Thunder</option>
+                <option value="26">Phoenix Suns</option>
+                <option value="27">Portland Trail Blazers</option>
+                <option value="28">Sacramento Kings</option>
+                <option value="29">San Antonio Spurs</option>
+                <option value="30">Utah Jazz</option>
             </select>
-  
+
             <div class="alerta_erro">
                 <div class="card_erro" id="cardErro">
-                  <span id="mensagem_erro"></span>
+                    <span id="mensagem_erro"></span>
                 </div>
             </div>
-    
+
+            <div id="div_aguardar" class="loading-div">
+                <img src="./assets/circle-loading.gif" id="loading-gif" />
+            </div>
+
+            <div id="div_erros_login"></div>
+        </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 NBA Info. </p>
+            <p>&copy; 2025 NBA Info.</p>
             <p>Desenvolvido por Lucas Miralha.</p>
         </div>
     </footer>
 
-</body>
-<script>
+    <script>
+        function cadastro() {
 
+            aguardar();
 
-function cadastro() {
-    aguardar();
+            var nomeVar = ipt_nome.value;
+            var emailVar = ipt_email.value;
+            var senhaVar = ipt_senha.value;
+            var confirmacaoSenhaVar = ipt_confirm_senha.value;
+            var cpfVar = ipt_cpf.value;
+            var timeFavVar = slt_time_fav.value;
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nome = ipt_nome.value
-    var email = ipt_email.value
-    var senha = ipt_senha.value
-    var confirmacaoSenha = ipt_confirm_senha.value
-    var cpf = ipt_cpf.value
-    var timeFav = slt_time_fav.value
-    // Verificando se há algum campo em branco
-    if (
-        nome == "" ||
-        email == "" ||
-        senha == "" ||
-        confirmacaoSenha == "" ||
-        cpf == ""
-    ) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "Algum campo está em branco! Verifique todos os campos!";
+            var simbolos = ["!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "_", "+", "=", "?", "/", ".", ",", ";", ":"];
+            var temSimbolo = false;
 
-        finalizarAguardar();
-        return false;
-    } else {
-        setInterval(sumirMensagem, 5000);
-    }
-
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            nomeServer: nome,
-            emailServer: email,
-            senhaServer: senha,
-            cpfServer: cpf,
-            timeServer: timeFav
-        }),
-    })
-        .then(function (resposta) {
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML =
-                    "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000");
-
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw "Houve um erro ao tentar realizar o cadastro!";
+            for (var i = 0; i < senhaVar.length; i++) {
+                for (var j = 0; j < simbolos.length; j++) {
+                    if (senhaVar[i] === simbolos[j]) {
+                        temSimbolo = true;
+                    }
+                }
             }
-        })
-        .catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
 
-    return false;
-}
+            if (
+                nomeVar == "" ||
+                emailVar == "" ||
+                senhaVar == "" ||
+                confirmacaoSenhaVar == "" ||
+                cpfVar == "" ||
+                timeFavVar == ""
+            ) {
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "Algum campo está em branco! Verifique todos os campos!";
+                finalizarAguardar();
+                return false;
 
-function sumirMensagem() {
-    cardErro.style.display = "none";
-}
+            } else if (nomeVar.length < 5) {
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "Nome deve conter no mínimo 5 caracteres!";
+                finalizarAguardar();
+                return false;
 
-</script>
+            } else if (senhaVar.length <= 8) {
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "Senha deve conter mais de 8 caracteres!";
+                finalizarAguardar();
+                return false;
+
+            } else if (!temSimbolo) {
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "Senha deve conter pelo menos 1 símbolo!";
+                finalizarAguardar();
+                return false;
+
+            } else if (cpfVar.length !== 12) {
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "CPF deve conter exatamente 12 caracteres!";
+                finalizarAguardar();
+                return false;
+
+            } else if (confirmacaoSenhaVar != senhaVar) {
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "As senhas não coincidem!";
+                finalizarAguardar();
+                return false;
+
+            } else {
+                setInterval(sumirMensagem, 5000);
+            }
+
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar,
+                    cpfServer: cpfVar,
+                    timeFavServer: timeFavVar
+                }),
+            })
+                .then(function (resposta) {
+                    if (resposta.ok) {
+                        cardErro.style.display = "block";
+                        mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                        setTimeout(() => {
+                            window.location = "login.html";
+                        }, 2000);
+                        limparFormulario();
+                        finalizarAguardar();
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    finalizarAguardar();
+                });
+
+            return false;
+        }
+
+        function sumirMensagem() {
+            cardErro.style.display = "none";
+        }
+    </script>
+
+</body>
+
 </html>
