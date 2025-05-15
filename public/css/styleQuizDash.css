@@ -1,82 +1,227 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: #ffffff;
-    color: #1d1d1d;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #ffffff;
+  color: #1d1d1d;
 }
 
 .janela {
-    display: flex;
+  display: flex;
 }
 
 .header-left a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .header-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    height: 100vh;
-    width: 18%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border-right: 2px solid #ffffff;
-    background-color: #122855;
-    color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-right: 2px solid #ffffff;
+  background-color: #122855;
+  color: #ffffff;
 }
 
 .btn-nav a {
-    position: relative;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 6px 0;
-    transition: color 0.3s ease;
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 6px 0;
+  transition: color 0.3s ease;
 }
 
 .btn-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #e03a3e;
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #e03a3e;
+  transition: width 0.3s ease;
 }
 
 .btn-nav a:hover {
-    color: #e03a3e;
+  color: #e03a3e;
 }
 
 .btn-nav a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .btn-logout {
-    background-color: #e03a3e;
-    color: white;
-    margin: 0;
-    padding: 0;
-    width: 20%;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px 15px;
-    margin-bottom: 100px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    display: block;
+  background-color: #e03a3e;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  display: block;
 }
 
 .btn-logout:hover {
-    background-color: #ffffff;
-    color: #e03a3e;
-    transform: translateY(-3px);
+  background-color: #ffffff;
+  color: #e03a3e;
+  transform: translateY(-3px);
+}
+
+.janela {
+  width: 82%;
+  position: relative;
+  top: 0;
+  left: 18%;
+  background-color: #e03a3e;
+  height: 100vh;
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#pontuacaoEJogo {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  background-color: #f4f4f4;
+  color: #1d1d1d;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#pontuacaoDuranteJogo {
+  display: grid;
+  padding: 15px;
+}
+
+#pontuacaoFinalJogo {
+  padding: 20px;
+}
+
+.info-questao {
+  padding: 15px;
+}
+
+.info-alternativas {
+  padding: 15px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.alternativas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  margin-top: 20px; 
+}
+
+.alternativas span{
+  background-color: #122855;
+  color: #ffffff;
+  width: 30%;
+  padding: 10px 15px;
+  margin: 8px;
+  border-radius: 12px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+  transition: transform 0.2s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.alternativas span:hover {
+  background-color:#e03a3e;
+  transform: scale(1.05);
+}
+
+#botoes {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 15px;
+}
+
+.btn-submeter {
+  background-color: #122855;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  height: 45px;
+}
+
+.btn-novamente {
+  background-color: #122855;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  height: 45px;
+}
+
+.btn-avancar {
+  background-color: #122855;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  height: 45px;
+}
+
+.btn-iniciar {
+  background-color: #122855;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  height: 45px;
+}
+
+.btn-submeter:hover,
+.btn-avancar:hover,
+.btn-novamente:hover,
+.btn-iniciar:hover {
+  background-color: #e03a3e;
+}
+
+#botaoIniciar {
+  width: 90%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
 }

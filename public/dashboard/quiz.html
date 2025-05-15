@@ -9,16 +9,16 @@
     <title> NBA Info | Quiz Trivia </title>
 
     <link rel="stylesheet" href="./../css/styleQuizDash.css" />
-
-    <script src="../js/sessao.js"></script>
-    <script src="../js/alerta.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/quiz.js"></script>
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<body onload="onloadEsconder()">
 
     <div class="janela">
 
@@ -32,7 +32,7 @@
 
             <div class="btn-nav">
                 <a href="./indexDash.html">
-                <h3>Início</h3>
+                    <h3>Início</h3>
                 </a>
             </div>
 
@@ -49,7 +49,7 @@
             </div>
 
             <div class="btn-nav">
-                <a href="./mural.html">
+                <a href="./forum.html">
                     <h3>Fórum</h3>
                 </a>
             </div>
@@ -65,67 +65,69 @@
             </div>
         </div>
 
-        <div class="dash">
-            <div id="alerta">
-            </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
+        <div id="pontuacaoEJogo">
+
+            <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+                <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                    <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
+                    <br>
+                    <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+                </div>
+                <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
+                    <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
+                        <span id="spanPontuacaoFinal">***</span>
+                    </span>
+                    <span id="msgFinal" class="width-fit-content">***</span>
                 </div>
             </div>
 
-            <div class="cards" id="cardAquarios">
+            <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+
+                <div id="infoQuestao" class="info-questao">
+                    <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
+                        questões.</span>
+                </div>
+
+                <div id="perguntaDaQuestaoAtual" class="padding-8">
+                    <span id="spanQuestaoExibida" class="text-bold"></span>
+                </div>
+
+                <div id="infoAlternativas" class="info-alternativas">
+                    <span><em>Escolha uma opção dentre as abaixo:</em></span>
+                </div>
+
+                <div id="opcoes" class="alternativas">
+                    <span>
+                        <input type="radio" id="primeiraOpcao" name="option" class="radio" value="1" />
+                        <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="segundaOpcao" name="option" class="radio" value="2" />
+                        <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="terceiraOpcao" name="option" class="radio" value="3" />
+                        <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                    </span>
+                    <span>
+                        <input type="radio" id="quartaOpcao" name="option" class="radio" value="4" />
+                        <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                    </span>
+                </div>
+
+                <div id="botoes" class="flex-colunar padding-8">
+                    <button onclick="submeter()" id="btnSubmeter" class="btn-submeter">Submeter resposta</button>
+                    <button onclick="avancar()" id="btnProx" class="btn-avancar" disabled>Avançar para próxima
+                        questão</button>
+                    <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                    <button onclick="tentarNovamente()" id="btnTentarNovamente" class="btn-novamente" disabled>Tentar
+                        novamente</button>
+                </div>
 
             </div>
-
+            <div id="botaoIniciar">
+                <button id="btnIniciarQuiz" onclick="iniciarQuiz()" class="btn-iniciar">INICIAR QUIZ</button>
+            </div>
         </div>
-
-    </div>
-
 </body>
-
-<script>
-
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
-
-</script>
-
 </html>

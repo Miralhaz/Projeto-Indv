@@ -1,144 +1,215 @@
-let perguntas = [
-  {
-    pergunta: "Qual time venceu mais campeonatos da NBA?",
-    opcoes: ["Chicago Bulls", "Los Angeles Lakers", "Boston Celtics", "Golden State Warriors"],
-    respostaCorreta: 2
-  },
-  {
-    pergunta: "Quem é o maior pontuador da história da NBA?",
-    opcoes: ["LeBron James", "Michael Jordan", "Kareem Abdul-Jabbar", "Kobe Bryant"],
-    respostaCorreta: 0
-  },
-  {
-    pergunta: "Qual jogador tem mais títulos da NBA?",
-    opcoes: ["Stephen Curry", "Tim Duncan", "Magic Johnson", "Bill Russell"],
-    respostaCorreta: 3
-  },
-  {
-    pergunta: "Qual time é responsável pela melhor temporada regular da história da NBA?",
-    opcoes: ["Oklahoma City Thunder", "Miami Heat", "Golden State Warriors", "Houston Rockets"],
-    respostaCorreta: 2
-  },
-  {
-    pergunta: "Em que ano a NBA foi fundada?",
-    opcoes: ["1946", "1950", "1935", "1962"],
-    respostaCorreta: 0
-  },
-  {
-    pergunta: "Quantos jogadores compõem um time titular da NBA?",
-    opcoes: ["4", "5", "6", "7"],
-    respostaCorreta: 1
-  },
-  {
-    pergunta: "Qual franquia foi a primeira campeã da NBA?",
-    opcoes: ["Boston Celtics", "New York Knicks", "Philadelphia Warriors", "Los Angeles Lakers"],
-    respostaCorreta: 2
-  },
-  {
-    pergunta: "Quem foi o MVP da temporada 2022-23?",
-    opcoes: ["Luka Doncic", "Nikola Jokic", "Giannis Antetokounmpo", "Joel Embiid"],
-    respostaCorreta: 3
-  }
-]
+let listaDeQuestoes = [];
+let numeroDaQuestaoAtual = 0;
+let pontuacaoFinal = 0;
+let tentativaIncorreta = 0;
+let certas = 0;
+let erradas = 0;
+let quantidadeDeQuestoes = 0;
 
-let indice = 0
-let acertos = 0
-let jaRespondeu = false
+let btnSubmeter, btnProx, btnTentarNovamente;
+let primeiraOpcao, segundaOpcao, terceiraOpcao, quartaOpcao;
 
-function prepararQuiz() {
+function onloadEsconder() {
+    document.getElementById('pontuacao').style.display = "none";
+    document.getElementById('jogo').style.display = "none";
 
-  document.getElementById('bloco-pergunta').style.display = 'none'
-  document.getElementById('resultado-final').style.display = 'none'
-  document.getElementById('iniciar-btn').style.display = 'block'
+    btnSubmeter = document.getElementById("btnSubmeter");
+    btnProx = document.getElementById("btnProx");
+    btnTentarNovamente = document.getElementById("btnTentarNovamente");
 
-}
+    primeiraOpcao = document.getElementById("primeiraOpcao");
+    segundaOpcao = document.getElementById("segundaOpcao");
+    terceiraOpcao = document.getElementById("terceiraOpcao");
+    quartaOpcao = document.getElementById("quartaOpcao");
+};
 
 function iniciarQuiz() {
+    document.getElementById('pontuacao').style.display = "";
+    document.getElementById('jogo').style.display = "";
+    document.getElementById('btnIniciarQuiz').style.display = "none";
 
-  indice = 0
-  acertos = 0
-  document.getElementById('iniciar-btn').style.display = 'none'
-  document.getElementById('resultado-final').style.display = 'none'
-  document.getElementById('bloco-pergunta').style.display = 'block'
-  mostrarPergunta()
+    buscar();
+}
+
+function buscar() {
+
+    fetch("http://localhost:3333/perguntas/buscar")
+        .then(res => {
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        })
+        .then(data => {
+            listaDeQuestoes = data;
+            quantidadeDeQuestoes = listaDeQuestoes.length;
+
+            document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes;
+            preencherHTMLcomQuestaoAtual(0);
+
+            btnSubmeter.disabled = false;
+            btnProx.disabled = true;
+        })
+        .catch(error => {
+            console.error("Erro ao carregar as perguntas:", error);
+            alert("Erro ao carregar perguntas. Verifique o servidor.");
+        });
 
 }
 
-function mostrarPergunta() {
+function preencherHTMLcomQuestaoAtual(index) {
+    habilitarAlternativas(true);
+    const questaoAtual = listaDeQuestoes[index];
+    numeroDaQuestaoAtual = index;
 
-  jaRespondeu = false
-  let pergunta = perguntas[indice]
+    document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = index + 1;
+    document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
+    document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativa1;
+    document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativa2;
 
-  document.getElementById('numero-pergunta').textContent = `Pergunta ${indice + 1} de ${perguntas.length}`
-  document.getElementById('texto-pergunta').textContent = pergunta.pergunta
-
-  let alternativas = document.getElementById('alternativas')
-  alternativas.innerHTML = ''
-
-  pergunta.opcoes.forEach((opcao, i) => {
-    let label = document.createElement('label')
-    label.classList.add('opcao-item') 
-    label.innerHTML = `
-      <input type="radio" name="resposta" value="${i}">
-      ${opcao}
-    `
-    label.querySelector('input').addEventListener('change', checarResposta)
-    alternativas.appendChild(label)
-
-  })
-
-  document.getElementById('proximo-btn').disabled = true
+    if (questaoAtual.alternativa3 && questaoAtual.alternativa4) {
+        document.getElementById("terceiraOpcao").parentElement.style.display = "block";
+        document.getElementById("quartaOpcao").parentElement.style.display = "block";
+        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativa3;
+        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativa4;
+    } else {
+        document.getElementById("terceiraOpcao").parentElement.style.display = "none";
+        document.getElementById("quartaOpcao").parentElement.style.display = "none";
+    }
 }
 
-function checarResposta(evento) {
+function submeter() {
+    const options = document.getElementsByName("option");
+    let hasChecked = false;
 
-  if (jaRespondeu) return
-  jaRespondeu = true
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            hasChecked = true;
+            break;
+        }
+    }
 
-  let respostaEscolhida = parseInt(evento.target.value)
-  let correta = perguntas[indice].respostaCorreta
+    if (!hasChecked) {
+        alert("Não há alternativas escolhidas. Escolha uma opção.");
+    } else {
+        btnSubmeter.disabled = true;
+        btnProx.disabled = false;
 
-  if (respostaEscolhida === correta) {
-    acertos++
-  }
-
-  let opcoes = document.querySelectorAll('#alternativas label')
-
-  opcoes.forEach((label, i) => {
-    
-  })
-
-  document.getElementById('proximo-btn').disabled = false
+        habilitarAlternativas(false);
+        checarResposta();
+    }
 }
 
-function proximaPergunta() {
-
-  indice++
-
-  if (indice >= perguntas.length) {
-
-    mostrarResultado()
-
-  } else {
-    
-    mostrarPergunta()
-
-  }
+function habilitarAlternativas(ativar) {
+    primeiraOpcao.disabled = !ativar;
+    segundaOpcao.disabled = !ativar;
+    terceiraOpcao.disabled = !ativar;
+    quartaOpcao.disabled = !ativar;
 }
 
-function mostrarResultado() {
+function avancar() {
+    btnProx.disabled = true;
+    btnSubmeter.disabled = false;
+    limparCoresBackgroundOpcoes();
+    desmarcarRadioButtons();
 
-  let erros = perguntas.length - acertos
-  let porcentagem = ((acertos / perguntas.length) * 100).toFixed(1)
+    if (numeroDaQuestaoAtual >= quantidadeDeQuestoes) {
+        finalizarJogo();
+        return;
+    }
 
-  document.getElementById('bloco-pergunta').style.display = 'none'
-  document.getElementById('resultado-final').style.display = 'block'
-  document.getElementById('acertos').textContent = acertos
-  document.getElementById('erros').textContent = erros
-  document.getElementById('taxa-acertos').textContent = `${porcentagem}%`
+    if (numeroDaQuestaoAtual === quantidadeDeQuestoes - 1) {
+        alert("Atenção... a próxima é a última questão!");
+    }
 
+    preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual);
 }
 
-function reiniciarQuiz() {
-  iniciarQuiz()
+function checarResposta() {
+    const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual];
+    const resposta = questaoAtual.alternativaCorreta;
+    const options = document.getElementsByName("option");
+    let alternativaCorretaLabelId = "";
+    let respondeu = false;
+
+    // Descobre o ID da label correta
+    options.forEach(option => {
+        if (parseInt(option.value) === resposta && option.labels.length > 0) {
+            alternativaCorretaLabelId = option.labels[0].id;
+        }
+    });
+
+    options.forEach(option => {
+        if (option.checked && option.labels.length > 0) {
+            respondeu = true;
+            const labelId = option.labels[0].id;
+            const label = document.getElementById(labelId);
+
+            if (parseInt(option.value) === resposta) {
+                if (label) label.classList.add("text-success-with-bg");
+                pontuacaoFinal++;
+                certas++;
+                document.getElementById("spanCertas").innerHTML = certas;
+            } else {
+                if (label) label.classList.add("text-danger-with-bg");
+
+                const correta = document.getElementById(alternativaCorretaLabelId);
+                if (correta) correta.classList.add("text-success-with-bg");
+
+                tentativaIncorreta++;
+                erradas++;
+                document.getElementById("spanErradas").innerHTML = erradas;
+            }
+        }
+    });
+
+    if (respondeu) {
+        numeroDaQuestaoAtual++;
+    }
+}
+
+
+function desmarcarRadioButtons() {
+    document.getElementsByName("option").forEach(opt => opt.checked = false);
+}
+
+function limparCoresBackgroundOpcoes() {
+    document.getElementsByName("option").forEach(option => {
+        if (option.labels.length > 0) {
+            const label = option.labels[0];
+            if (label) {
+                label.classList.remove("text-success-with-bg", "text-danger-with-bg");
+            }
+        }
+    });
+}
+
+function finalizarJogo() {
+    let mensagem = "";
+    let classe = "";
+    const porcentagem = pontuacaoFinal / quantidadeDeQuestoes;
+
+    if (porcentagem <= 0.3) {
+        mensagem = "Parece que você não estudou...";
+        classe = "text-danger-with-bg";
+    } else if (porcentagem < 0.9) {
+        mensagem = "Pode melhorar na próxima, hein!";
+        classe = "text-warning-with-bg";
+    } else {
+        mensagem = "Uau, parabéns!";
+        classe = "text-success-with-bg";
+    }
+
+    mensagem += `<br>Você acertou ${Math.round(porcentagem * 100)}% das questões.`;
+
+    document.getElementById("msgFinal").innerHTML = mensagem;
+    document.getElementById("msgFinal").classList.add(classe);
+    document.getElementById("spanPontuacaoFinal").innerHTML = pontuacaoFinal;
+
+    document.getElementById("jogo").classList.add("text-new-gray");
+    btnSubmeter.disabled = true;
+    btnProx.disabled = true;
+    btnTentarNovamente.disabled = false;
+}
+
+function tentarNovamente() {
+    window.location.reload();
 }

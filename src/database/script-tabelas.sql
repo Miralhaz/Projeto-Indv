@@ -41,6 +41,16 @@ CREATE TABLE aviso (
     FOREIGN KEY (fk_usuario) REFERENCES usuario(idUser)
 );
 
+CREATE TABLE quizPerguntas (
+    idPergunta INT PRIMARY KEY AUTO_INCREMENT,
+    pergunta VARCHAR(100),
+    alternativa1 VARCHAR(60),
+    alternativa2 VARCHAR(60),
+    alternativa3 VARCHAR(60),
+    alternativa4 VARCHAR(60),
+    alternativaCorreta INT
+);
+
 INSERT INTO times (nome) VALUES
 ('Boston Celtics'),
 ('Brooklyn Nets'),
@@ -72,3 +82,14 @@ INSERT INTO times (nome) VALUES
 ('Memphis Grizzlies'),
 ('New Orleans Pelicans'),
 ('San Antonio Spurs');
+
+INSERT INTO quizPerguntas (pergunta, alternativa1, alternativa2, alternativa3, alternativa4, alternativaCorreta)
+VALUES 
+('Qual time venceu mais campeonatos da NBA?', 'Chicago Bulls', 'Los Angeles Lakers', 'Boston Celtics', 'Golden State Warriors', 3),
+('Quem é o maior pontuador da história da NBA?', 'LeBron James', 'Michael Jordan', 'Kareem Abdul-Jabbar', 'Kobe Bryant', 1),
+('Qual jogador tem mais títulos da NBA?', 'Stephen Curry', 'Tim Duncan', 'Magic Johnson', 'Bill Russell', 4),
+('Qual time é responsável pela melhor temporada regular da história da NBA?', 'Oklahoma City Thunder', 'Miami Heat', 'Golden State Warriors', 'Houston Rockets', 3),
+('Em que ano a NBA foi fundada?', '1946', '1950', '1935', '1962', 1),
+('Quantos jogadores compõem um time titular da NBA?', '4', '5', '6', '7', 2),
+('Qual franquia foi a primeira campeã da NBA?', 'Boston Celtics', 'New York Knicks', 'Philadelphia Warriors', 'Los Angeles Lakers', 3),
+('Quem foi o MVP da temporada 2022-23?', 'Luka Doncic', 'Nikola Jokic', 'Giannis Antetokounmpo', 'Joel Embiid', 4);
