@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #ffffff;
+    color: #1d1d1d;
+}
+
+.janela {
+    display: flex;
+}
+
+.header-left a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-right: 2px solid #ffffff;
+    background-color: #122855;
+    color: #ffffff;
+}
+
+.btn-nav a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+.btn-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e03a3e;
+    transition: width 0.3s ease;
+}
+
+.btn-nav a:hover {
+    color: #e03a3e;
+}
+
+.btn-nav a:hover::after {
+    width: 100%;
+}
+
+.btn-logout {
+    background-color: #e03a3e;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    display: block;
+}
+
+.btn-logout:hover {
+    background-color: #ffffff;
+    color: #e03a3e;
+    transform: translateY(-3px);
+}
+
+.dash {
+    width: 82%;
+    position: relative;
+    top: 0;
+    left: 18%;
+    background-color: #e03a3e;
+    height: 100vh;
+    overflow: auto;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.dash-right .avisos {
+    width: 100%;
+    color: rgb(216, 216, 216);
+    font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.dash-right .avisos .container .div-form {
+    width: 95%;
+}
+
+.dash-right .avisos .container .div-form #form_postagem {
+    width: 95%;
+}
+
+.dash-right .avisos .div-form label {
+    width: 95%;
+}
+
+.dash-right .avisos .div-form input {
+    width: 95%;
+    border-radius: 5px;
+}
+
+.dash-right .avisos .div-form textarea {
+    width: 95%;
+    border: 3px solid #e6005a;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.dash-right .avisos .div-form button {
+    cursor: pointer;
+    font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #e6005a;
+    width: 120px;
+}

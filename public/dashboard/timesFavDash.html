@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Info | Times Favoritos dos Usuários</title>
+    <script src="../js/sessao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="../css/styleTimesFav.css">
+</head>
+
+<body onload="obterDados()">
+
+    <div class="janela">
+
+        <div class="header-left">
+
+            <h1>NBA Info</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav">
+                <a href="./indexDash.html">
+                    <h3>Início</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <a href="./quiz.html">
+                    <h3>Quiz sobre a NBA</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <a href="./dashboard.html">
+                    <h3>Gráficos</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <a href="./forum.html">
+                    <h3>Fórum</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <a href="">
+                    <h3>Franquias Favoritas</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+        </div>
+
+        <div class="dash">
+            <div class="inicial">
+                Veja aqui quais são os times favoritos dos usuários do nosso blog:
+            </div>
+
+            <div class="grafico-times">
+                <!-- Elemento canvas onde o gráfico de pizza será renderizado -->
+                <canvas id="pizza_times"></canvas>
+            </div>
+        </div>
+
+</body>
+
+<script>
+
+    const b_usuario = document.getElementById('b_usuario');
+    if (sessionStorage.NOME_USUARIO) {
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    } else {
+        b_usuario.innerHTML = 'usuário';
+    }
+
+    // Função chamada ao carregar a página para obter e processar os dados
+    function obterDados() {
+        fetch('/timesFav')
+            .then(response => response.text())
+            .then(text => {
+                console.log('Resposta do servidor:', text);
+                try {
+                    const data = JSON.parse(text);
+                    plotarGraficoPizza(data);
+                } catch (e) {
+                    console.error('Erro ao converter para JSON:', e);
+                }
+            })
+            .catch(err => {
+                console.log('Erro ao obter dados:', err);
+            });
+    }
+
+    // Função para plotar o gráfico de linha
+    function plotarGraficoPizza(data) {
+
+        // Separando os rótulos (labels) e os dados dos votos
+        var times = [];
+        var quantidade = [];
+
+        // Preenchendo os arrays com os dados
+        for (var i = 0; i < data.length; i++) {
+            times.push(data[i].nome);
+            quantidade.push(data[i].quantidade)
+        }
+
+        // Capturando o elemento canvas pelo id 
+        var ctx = document.getElementById('pizza_times').getContext('2d');
+        // Criando o gráfico de linha usando o Chart.js
+        var myChart = new Chart(ctx, {
+            type: 'pie', // Tipo de gráfico: linha
+            data: { // Dados para o gráfico
+                labels: times, // Define os rótulos do gráfico como os nomes dos ídolos
+                datasets: [{
+                    data: quantidade, // Define os dados do gráfico como as quantidades de usuários
+                    backgroundColor: [
+                        '#007A33', '#E03A3E', '#000000', '#1D1160', '#CE1141', '#860038',
+                        '#00538C', '#0E2240', '#C8102E', '#1D428A', '#CE1141', '#002D62',
+                        '#C8102E', '#552583', '#5D76A9', '#98002E', '#00471B', '#0C2340',
+                        '#0C2340', '#006BB6', '#007AC1', '#0077C0', '#006BB6', '#1D1160',
+                        '#E03A3E', '#5A2D81', '#C4CED4', '#CE1141', '#002B5C', '#002B5C'] // Cores para cada fatia do gráfico
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom', // Posição da legenda no gráfico
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + ' usuários';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+</script>
+
+</html>
