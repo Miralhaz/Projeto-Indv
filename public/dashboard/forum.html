@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon/logo-icon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,27 +73,34 @@
             <div id="alerta">
             </div>
             <div class="container">
-                <h1>Publicar um aviso</h1>
+                <h1>Publicar um Post
+                    <br>
+                    <br>
+                    Escreva Posts sobre seu time favorito para outros também saberem sobre!!
+                </h1>
                 <div class="div-form">
                     <form id="form_postagem" method="post" onsubmit="return publicar()">
                         <label>
                             Título:
                             <br>
+                            <br>
                             <input name="titulo" id="titulo" maxlength="100" type="text">
                         </label>
+                        <br>
                         <br>
                         <br>
                         <label>
                             Descrição (máximo de 250 caracteres):
                             <br>
+                            <br>
                             <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                         </label>
                         <br>
                         <br>
-                        <button>Enviar</button>
+                        <button class="btn-enviar">Enviar</button>
                     </form>
                 </div>
-                <h1>Mural de Avisos</h1>
+                <h1>Posts De Usuários do Site: </h1>
                 <div class="div-results">
                     <div id="feed_container" class="feed-container">
                     </div>
@@ -138,7 +145,7 @@
 
             if (resposta.ok) {
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
+                window.location = "/dashboard/forum.html";
                 limparFormulario();
                 finalizarAguardar();
             } else if (resposta.status == 404) {
@@ -159,7 +166,7 @@
         sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
         console.log("cliquei em editar - " + idAviso);
         window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
-        window.location = "/dashboard/edicao-aviso.html"
+        window.location = "/dashboard/edicao-post.html"
 
     }
 
@@ -174,7 +181,7 @@
 
             if (resposta.ok) {
                 window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/mural.html"
+                window.location = "/dashboard/forum.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {

@@ -183,6 +183,7 @@ function limparCoresBackgroundOpcoes() {
 }
 
 function finalizarJogo() {
+
     let mensagem = "";
     let classe = "";
     const porcentagem = pontuacaoFinal / quantidadeDeQuestoes;
@@ -208,6 +209,48 @@ function finalizarJogo() {
     btnSubmeter.disabled = true;
     btnProx.disabled = true;
     btnTentarNovamente.disabled = false;
+
+    salvarResultadosNoBanco()
+}
+
+function obterIdDoUsuario() {
+    return sessionStorage.getItem('ID_USUARIO'); 
+}
+
+function salvarResultadosNoBanco() {
+
+    const usuarioId = obterIdDoUsuario(); 
+    if (!usuarioId) {
+        console.error("ID do usuário não encontrado. Não foi possível salvar os resultados.");
+        return;
+    }
+
+    fetch("quiz/salvarResultados", { 
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            fk_usuario: usuarioId,
+            respostasAcertas: certas,
+            respostasErradas: erradas
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Resultados do quiz salvos com sucesso!", data);
+        
+    })
+    .catch(error => {
+        console.error("Erro ao salvar os resultados do quiz:", error);
+        alert("Erro ao salvar os resultados. Tente novamente.");
+        
+    });
 }
 
 function tentarNovamente() {
