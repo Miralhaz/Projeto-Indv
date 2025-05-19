@@ -80,3 +80,38 @@ body {
     color: #e03a3e;
     transform: translateY(-3px);
 }
+
+.dash {
+    width: 82%;
+    position: relative;
+    top: 0;
+    left: 18%;
+    background-color: #e03a3e;
+    height: 100vh;
+    overflow: auto;
+    color: #000000;
+}
+
+.inicial {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    margin: 25px auto;
+    padding: 20px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.grafico-container {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    margin: 5% auto 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}

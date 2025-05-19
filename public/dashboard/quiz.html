@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> NBA Info | Quiz Trivia </title>
-    
+
     <link rel="stylesheet" href="./../css/styleQuizDash.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -68,11 +68,6 @@
         <div id="pontuacaoEJogo">
 
             <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-                <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                    <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                    <br>
-                    <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-                </div>
                 <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
                     <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
                         <span id="spanPontuacaoFinal">***</span>
@@ -119,7 +114,6 @@
                     <button onclick="submeter()" id="btnSubmeter" class="btn-submeter">Submeter resposta</button>
                     <button onclick="avancar()" id="btnProx" class="btn-avancar" disabled>Avançar para próxima
                         questão</button>
-                    <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
                     <button onclick="tentarNovamente()" id="btnTentarNovamente" class="btn-novamente" disabled>Tentar
                         novamente</button>
                 </div>
@@ -130,4 +124,9 @@
             </div>
         </div>
 </body>
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+</script>
 </html>

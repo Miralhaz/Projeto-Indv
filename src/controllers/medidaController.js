@@ -4,16 +4,15 @@ function buscarResultadosQuiz(req, res) {
     var fk_usuario = req.params.fk_usuario; 
 
     medidaModel.buscarResultadosQuiz(fk_usuario)
-        .then(function (resultado) {
+        .then((resultado) => {
             if (resultado.length > 0) {
-                res.status(200).json(resultado);
+                res.json(resultado[0])
             } else {
-                res.status(204).send("Nenhum resultado de quiz encontrado para este usuário!");
+                res.status(404).send("Nenhum resultado encontrado");
             }
         })
-        .catch(function (erro) {
+        .catch((erro) => {
             console.log(erro);
-            console.log("Houve um erro ao buscar os resultados do quiz.", erro.sqlMessage);
             res.status(500).json(erro.sqlMessage);
         });
 }

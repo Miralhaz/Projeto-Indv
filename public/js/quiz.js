@@ -56,6 +56,7 @@ function buscar() {
 }
 
 function preencherHTMLcomQuestaoAtual(index) {
+
     habilitarAlternativas(true);
     const questaoAtual = listaDeQuestoes[index];
     numeroDaQuestaoAtual = index;
@@ -77,6 +78,7 @@ function preencherHTMLcomQuestaoAtual(index) {
 }
 
 function submeter() {
+
     const options = document.getElementsByName("option");
     let hasChecked = false;
 
@@ -130,7 +132,6 @@ function checarResposta() {
     let alternativaCorretaLabelId = "";
     let respondeu = false;
 
-    // Descobre o ID da label correta
     options.forEach(option => {
         if (parseInt(option.value) === resposta && option.labels.length > 0) {
             alternativaCorretaLabelId = option.labels[0].id;
@@ -140,23 +141,21 @@ function checarResposta() {
     options.forEach(option => {
         if (option.checked && option.labels.length > 0) {
             respondeu = true;
-            const labelId = option.labels[0].id;
-            const label = document.getElementById(labelId);
+            const labelId = option.labels[0].id
+            const label = document.getElementById(labelId)
 
             if (parseInt(option.value) === resposta) {
-                if (label) label.classList.add("text-success-with-bg");
-                pontuacaoFinal++;
-                certas++;
-                document.getElementById("spanCertas").innerHTML = certas;
+                if (label) label.classList.add("text-success-with-bg")
+                pontuacaoFinal++
+                certas++
             } else {
-                if (label) label.classList.add("text-danger-with-bg");
+                if (label) label.classList.add("text-danger-with-bg")
 
-                const correta = document.getElementById(alternativaCorretaLabelId);
-                if (correta) correta.classList.add("text-success-with-bg");
+                const correta = document.getElementById(alternativaCorretaLabelId)
+                if (correta) correta.classList.add("text-success-with-bg")
 
                 tentativaIncorreta++;
                 erradas++;
-                document.getElementById("spanErradas").innerHTML = erradas;
             }
         }
     });
@@ -189,17 +188,17 @@ function finalizarJogo() {
     const porcentagem = pontuacaoFinal / quantidadeDeQuestoes;
 
     if (porcentagem <= 0.3) {
-        mensagem = "Parece que você não estudou...";
+        mensagem = "<br> Parece que você não estudou...";
         classe = "text-danger-with-bg";
     } else if (porcentagem < 0.9) {
-        mensagem = "Pode melhorar na próxima, hein!";
+        mensagem = "<br> Pode melhorar na próxima, hein!";
         classe = "text-warning-with-bg";
     } else {
-        mensagem = "Uau, parabéns!";
+        mensagem = "<br> Uau, parabéns!";
         classe = "text-success-with-bg";
     }
 
-    mensagem += `<br>Você acertou ${Math.round(porcentagem * 100)}% das questões.`;
+    mensagem += `<br> Você acertou ${Math.round(porcentagem * 100)}% das questões.`;
 
     document.getElementById("msgFinal").innerHTML = mensagem;
     document.getElementById("msgFinal").classList.add(classe);
@@ -225,7 +224,7 @@ function salvarResultadosNoBanco() {
         return;
     }
 
-    fetch("quiz/salvarResultados", { 
+    fetch("/medidas/quiz/salvarResultados", { 
         method: "POST",
         headers: {
             "Content-Type": "application/json"

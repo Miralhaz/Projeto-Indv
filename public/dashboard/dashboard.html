@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> NBAInfo | Dashboards </title>
+    <title> NBA Info | Dashboard Quiz </title>
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -73,21 +73,25 @@
         </div>
     </div>
 
-    <div class="grafico-container">
+    <div class="dash">
+        <div class="inicial">
+            Veja aqui seu desempenho no quiz sobre a NBA:
+        </div>
 
-        <canvas id="resultadoQuizChart" width="400" height="200"></canvas>
-
+        <div class="grafico-container">
+            <canvas id="resultadoQuizChart" width="400" height="200"></canvas>
+        </div>
     </div>
 
 </body>
 <script>
 
     function obterIdUsuarioSessao() {
-        return sessionStorage.getItem('ID_USUARIO'); 
+        return sessionStorage.getItem('ID_USUARIO');
     }
 
     function buscarEExibirResultadosQuiz(fk_usuario) {
-        fetch(`/quiz-resultado/:fk_usuario`)
+        fetch(`/medidas/quiz-resultado/${fk_usuario}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -109,6 +113,7 @@
     }
 
     function exibirGrafico(acertos, erros) {
+
         const ctx = document.getElementById('resultadoQuizChart').getContext('2d');
 
         new Chart(ctx, {
@@ -119,14 +124,15 @@
                     label: 'Resultado do Quiz',
                     data: [acertos, erros],
                     backgroundColor: [
-                        'rgba(75, 192, 192, 0.6)',
-                        'rgba(255, 99, 132, 0.6)'
+                        'lightgreen',
+                        'red'
                     ],
                     borderColor: [
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(255, 99, 132, 1)'
+                        'lightgreen',
+                        'red'
                     ],
-                    borderWidth: 1
+                    borderWidth: 1,
+                    borderRadius: 4
                 }]
             },
             options: {
@@ -142,7 +148,7 @@
         });
     }
 
-    window.onload = function() {
+    window.onload = function () {
         const userId = obterIdUsuarioSessao();
         if (userId) {
             buscarEExibirResultadosQuiz(userId);
@@ -150,5 +156,7 @@
             console.log("ID do usuário não encontrado na sessão.");
         }
     }
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 </script>

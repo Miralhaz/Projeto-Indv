@@ -14,8 +14,9 @@ function buscarResultadosQuiz(fk_usuario) {
     var instrucaoSql = `
         SELECT respostasAcertas, respostasErradas
         FROM quiz 
-        WHERE fk_usuario = ${fk_usuario}
-        ORDER BY idQuiz DESC;
+        WHERE fk_usuario = ${Number(fk_usuario)}
+        ORDER BY idQuiz DESC
+        LIMIT 1;
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

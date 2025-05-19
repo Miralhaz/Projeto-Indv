@@ -89,9 +89,7 @@
                 </div>
             </div>
 
-            <div id="div_aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" id="loading-gif" />
-            </div>
+            <div id="div_aguardar" class="loading-div"></div>
 
             <div id="div_erros_login"></div>
         </div>
@@ -136,37 +134,37 @@
                 timeFavVar == ""
             ) {
                 cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "Algum campo está em branco! Verifique todos os campos!";
+                mensagem_erro.innerHTML = `<p style="color:red"> Algum campo está em branco! Verifique todos os campos! </p>`;
                 finalizarAguardar();
                 return false;
 
             } else if (nomeVar.length < 5) {
-                cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "Nome deve conter no mínimo 5 caracteres!";
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = `<p style="color:red"> Nome deve conter no mínimo 5 caracteres! </p>`
                 finalizarAguardar();
                 return false;
 
             } else if (senhaVar.length <= 8) {
-                cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "Senha deve conter mais de 8 caracteres!";
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = `<p style="color:red"> Senha deve conter mais de 8 caracteres! </p>`
                 finalizarAguardar();
                 return false;
 
             } else if (!temSimbolo) {
-                cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "Senha deve conter pelo menos 1 símbolo!";
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = `<p style="color:red"> Senha deve conter pelo menos 1 símbolo! </p>`
                 finalizarAguardar();
                 return false;
 
             } else if (cpfVar.length !== 12) {
-                cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "CPF deve conter exatamente 12 caracteres!";
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = `<p style="color:red"> CPF deve conter exatamente 12 caracteres! </p>`
                 finalizarAguardar();
                 return false;
 
             } else if (confirmacaoSenhaVar != senhaVar) {
-                cardErro.style.display = "block";
-                mensagem_erro.innerHTML = "As senhas não coincidem!";
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = `<p style="color:red"> As senhas não coincidem! </p>`
                 finalizarAguardar();
                 return false;
 
@@ -190,12 +188,13 @@
                 .then(function (resposta) {
                     if (resposta.ok) {
                         cardErro.style.display = "block";
-                        mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                        mensagem_erro.innerHTML = `<p style="color:green"> Cadastro realizado com sucesso! Redirecionando para tela de Login...</p>`
+                        div_aguardar.innerHTML = `<img src="assets/circle-loading.gif" alt="">`
                         setTimeout(() => {
                             window.location = "login.html";
+                            limparFormulario();
+                            finalizarAguardar();
                         }, 2000);
-                        limparFormulario();
-                        finalizarAguardar();
                     } else {
                         throw "Houve um erro ao tentar realizar o cadastro!";
                     }
@@ -211,6 +210,7 @@
         function sumirMensagem() {
             cardErro.style.display = "none";
         }
+
     </script>
 
 </body>

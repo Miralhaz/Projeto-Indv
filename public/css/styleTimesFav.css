@@ -1,4 +1,4 @@
-/* Estilos gerais */
+
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +11,6 @@ body {
     display: flex;
 }
 
-/* Menu lateral fixo */
 .header-left {
     position: fixed;
     top: 0;
@@ -33,7 +32,6 @@ body {
     color: white;
 }
 
-/* Botões de navegação */
 .btn-nav a {
     position: relative;
     color: #ffffff;
@@ -63,7 +61,6 @@ body {
     width: 100%;
 }
 
-/* Botão de logout */
 .btn-logout {
     background-color: #e03a3e;
     color: white;
@@ -83,7 +80,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Área principal (dashboard) */
 .dash {
     width: 82%;
     position: relative;
@@ -95,7 +91,6 @@ body {
     color: #000000;
 }
 
-/* Bloco de conteúdo inicial */
 .inicial {
     background-color: #ffffff;
     display: flex;
@@ -108,7 +103,6 @@ body {
     font-weight: bold;
 }
 
-/* Gráfico de times */
 .grafico-times {
     background-color: #ffffff;
     display: flex;

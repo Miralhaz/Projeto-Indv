@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="assets/icon/logo-icon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>NBA Info | Login</title>
 
     <script src="js/sessao.js"></script>
 
@@ -51,9 +51,7 @@
                 </div>
             </div>
 
-            <div id="div_aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" id="loading-gif" />
-            </div>
+            <div id="div_aguardar" class="loading-div"></div>
 
             <div id="div_erros_login"></div>
         </div>
@@ -79,7 +77,7 @@ function entrar() {
 
     if (emailVar == "" || senhaVar == "") {
         cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "Algum campo está em branco! Verifique todos os campos!";
+        mensagem_erro.innerHTML = `<p style="color:red"> Algum campo está em branco! Verifique todos os campos! </p>`;
         finalizarAguardar();
         return false;
     }
@@ -111,10 +109,13 @@ function entrar() {
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.idUser;
+            
+                mensagem_erro.innerHTML = `<p style="color:green"> Login bem-sucedido. Indo para a dashboard... </p>`
+                div_aguardar.innerHTML = `<img src="assets/circle-loading.gif" alt="">`
 
                 setTimeout(function () {
                     window.location = "./dashboard/indexDash.html";
-                }, 1000); // apenas para exibir o loading
+                }, 1000); 
 
             });
 

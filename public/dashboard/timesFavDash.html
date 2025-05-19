@@ -66,7 +66,6 @@
             </div>
 
             <div class="grafico-times">
-                <!-- Elemento canvas onde o gráfico de pizza será renderizado -->
                 <canvas id="pizza_times"></canvas>
             </div>
         </div>
@@ -82,7 +81,6 @@
         b_usuario.innerHTML = 'usuário';
     }
 
-    // Função chamada ao carregar a página para obter e processar os dados
     function obterDados() {
         fetch('/timesFav')
             .then(response => response.text())
@@ -100,40 +98,36 @@
             });
     }
 
-    // Função para plotar o gráfico de linha
+   
     function plotarGraficoPizza(data) {
 
-        // Separando os rótulos (labels) e os dados dos votos
         var times = [];
         var quantidade = [];
 
-        // Preenchendo os arrays com os dados
         for (var i = 0; i < data.length; i++) {
             times.push(data[i].nome);
             quantidade.push(data[i].quantidade)
         }
 
-        // Capturando o elemento canvas pelo id 
         var ctx = document.getElementById('pizza_times').getContext('2d');
-        // Criando o gráfico de linha usando o Chart.js
         var myChart = new Chart(ctx, {
-            type: 'pie', // Tipo de gráfico: linha
-            data: { // Dados para o gráfico
-                labels: times, // Define os rótulos do gráfico como os nomes dos ídolos
+            type: 'pie', 
+            data: { 
+                labels: times, 
                 datasets: [{
-                    data: quantidade, // Define os dados do gráfico como as quantidades de usuários
+                    data: quantidade, 
                     backgroundColor: [
                         '#007A33', '#000000','#006BB6','#006BB6','#CE1141','#CE1141','#860038','#C8102E','#002D62',
                         '#00471B','#E03A3E','#1D1160','#98002E','#0077C0','#002B5C','#0E2240','#0C2340','#007AC1',
                         '#E03A3E','#002B5C','#1D428A','#C8102E','#552583','#E56020','#5A2D81','#00538C','#CE1141',
-                        '#12173F','#0C2340','#C4CED4'] // Cores para cada fatia do gráfico
+                        '#12173F','#0C2340','#C4CED4']
                 }]
             },
             options: {
                 responsive: true,
                 plugins: {
                     legend: {
-                        position: 'bottom', // Posição da legenda no gráfico
+                        position: 'bottom',
                     },
                     tooltip: {
                         callbacks: {
