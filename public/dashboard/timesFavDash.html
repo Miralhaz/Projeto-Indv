@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/styleTimesFav.css">
 </head>
 
-<body onload="obterDados()">
+<body onload="obterDados(), obterDadosJogadores()">
 
     <div class="janela">
 
@@ -62,11 +62,17 @@
 
         <div class="dash">
             <div class="inicial">
-                Veja aqui quais são os times favoritos dos usuários do nosso blog:
+                Veja aqui quais são os times e jogadores favoritos dos usuários do nosso blog:
             </div>
 
-            <div class="grafico-times">
-                <canvas id="pizza_times"></canvas>
+            <div class="graficos">
+                <div class="grafico-times">
+                    <canvas id="pizza_times"></canvas>
+                </div>
+
+                <div class="grafico-jogadores">
+                    <canvas id="pizza_jogadores"></canvas>
+                </div>
             </div>
         </div>
 
@@ -98,7 +104,7 @@
             });
     }
 
-   
+
     function plotarGraficoPizza(data) {
 
         var times = [];
@@ -111,23 +117,126 @@
 
         var ctx = document.getElementById('pizza_times').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'pie', 
-            data: { 
-                labels: times, 
+            type: 'bar',
+            data: {
+                labels: times,
                 datasets: [{
-                    data: quantidade, 
+                    label: 'Quantidade de usuários',
+                    data: quantidade,
                     backgroundColor: [
-                        '#007A33', '#000000','#006BB6','#006BB6','#CE1141','#CE1141','#860038','#C8102E','#002D62',
-                        '#00471B','#E03A3E','#1D1160','#98002E','#0077C0','#002B5C','#0E2240','#0C2340','#007AC1',
-                        '#E03A3E','#002B5C','#1D428A','#C8102E','#552583','#E56020','#5A2D81','#00538C','#CE1141',
-                        '#12173F','#0C2340','#C4CED4']
+                        '#007A33', '#000000', '#006BB6', '#006BB6', '#CE1141', '#CE1141', '#860038', '#C8102E', '#002D62',
+                        '#00471B', '#E03A3E', '#1D1160', '#98002E', '#0077C0', '#002B5C', '#0E2240', '#0C2340', '#007AC1',
+                        '#E03A3E', '#002B5C', '#1D428A', '#C8102E', '#552583', '#E56020', '#5A2D81', '#00538C', '#CE1141',
+                        '#12173F', '#0C2340', '#C4CED4']
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribuição de usuários por time',
+                        font: {
+                            size: 18
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + ' usuários';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        },
+                        title: {
+                            display: true,
+                            text: 'Quantidade'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+
+    function obterDadosJogadores() {
+        fetch('/jogadoresFav')
+            .then(response => response.text())
+            .then(text => {
+                console.log('Resposta do servidor:', text);
+                try {
+                    const data = JSON.parse(text);
+                    console.log(`${data}`)
+                    plotarGraficoPizzaJogadores(data);
+                } catch (e) {
+                    console.error('Erro ao converter para JSON:', e);
+                }
+            })
+            .catch(err => {
+                console.log('Erro ao obter dados:', err);
+            });
+    }
+
+
+    function plotarGraficoPizzaJogadores(data) {
+
+        var jogadores = [];
+        var quantidade = [];
+
+        for (var i = 0; i < data.length; i++) {
+            jogadores.push(data[i].nome);
+            quantidade.push(data[i].quantidade)
+        }
+
+        var ctx = document.getElementById('pizza_jogadores').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: jogadores,
+                datasets: [{
+                    data: quantidade,
+                    backgroundColor: [
+                        '#007A33', '#000000', '#006BB6', '#006BB6', '#CE1141']
                 }]
             },
             options: {
                 responsive: true,
                 plugins: {
                     legend: {
+                        display: true,
                         position: 'bottom',
+                        labels: {
+                            padding: 10,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribuição de usuários por jogador favorito',
+                        font: {
+                            size: 18
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 20
+                        }
                     },
                     tooltip: {
                         callbacks: {

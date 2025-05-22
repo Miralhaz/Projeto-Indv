@@ -15,6 +15,11 @@ CREATE TABLE times (
 	nome VARCHAR(45)
 );
 
+CREATE TABLE jogadores (
+    idJogador INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45)
+);
+
 CREATE TABLE usuario (
 	idUser INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
@@ -22,7 +27,9 @@ CREATE TABLE usuario (
 	senha VARCHAR(50),
 	cpf VARCHAR(50),
 	fktime INT,
-	FOREIGN KEY (fktime) REFERENCES times(idTime)
+    fkjogador INT,
+	FOREIGN KEY (fktime) REFERENCES times(idTime),
+    FOREIGN KEY (fkjogador) REFERENCES jogadores(idJogador)
 );
 
 CREATE TABLE quiz (
@@ -83,6 +90,14 @@ INSERT INTO times (nome) VALUES
 ('New Orleans Pelicans'),
 ('San Antonio Spurs');
 
+INSERT INTO jogadores (nome)
+VALUES
+('Lebron James'),
+('Kobe Bryant'),
+('Micheal Jordan'),
+('Steph Curry'),
+('Shaquille O Neal');
+
 INSERT INTO quizPerguntas (pergunta, alternativa1, alternativa2, alternativa3, alternativa4, alternativaCorreta)
 VALUES 
 ('Qual time venceu mais campeonatos da NBA?', 'Chicago Bulls', 'Los Angeles Lakers', 'Boston Celtics', 'Golden State Warriors', 3),
@@ -93,3 +108,9 @@ VALUES
 ('Quantos jogadores compõem um time titular da NBA?', '4', '5', '6', '7', 2),
 ('Qual franquia foi a primeira campeã da NBA?', 'Boston Celtics', 'New York Knicks', 'Philadelphia Warriors', 'Los Angeles Lakers', 3),
 ('Quem foi o MVP da temporada 2022-23?', 'Luka Doncic', 'Nikola Jokic', 'Giannis Antetokounmpo', 'Joel Embiid', 4);
+
+select * from usuario;
+select * from quiz;
+select * from quizPerguntas;
+select * from aviso;
+select * from jogadores;

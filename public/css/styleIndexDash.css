@@ -109,7 +109,8 @@ body {
     max-width: 80%;
     text-align: center;
     margin: 10px 0;
-    transition: transform 0.2s ease
+    transition: transform 0.2s ease;
+    font-size: large
 }
 
 .titulo:hover {
@@ -125,7 +126,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     padding: 40px 20px;
-    background-color: #e6963a
+    background-color: #ffb057
 }
 
 .container-funcoes>div {

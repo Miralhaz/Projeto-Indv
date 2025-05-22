@@ -27,7 +27,8 @@ function autenticar(req, res){
                                 nome: resultadoAutenticar[0].nome,
                                 cpf: resultadoAutenticar[0].cpf,
                                 senha: resultadoAutenticar[0].senha,
-                                timeFav: resultadoAutenticar[0].timeFav
+                                timeFav: resultadoAutenticar[0].timeFav,
+                                jogadorFav: resultadoAutenticar[0].jogadorFav,
                             });
 
                     } else if (resultadoAutenticar.length == 0) {
@@ -48,12 +49,14 @@ function autenticar(req, res){
 }
 
 function cadastrar(req, res) {
+    console.log(req.body.jogadorFavServer)
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var email = req.body.emailServer
     var senha = req.body.senhaServer
     var nome = req.body.nomeServer
     var cpf = req.body.cpfServer
     var timeFav = req.body.timeFavServer
+    var jogadorFav = req.body.jogadorFavServer
 
     // Faça as validações dos valores
     
@@ -67,10 +70,12 @@ function cadastrar(req, res) {
         res.status(400).send("Seu CPF está indefinido")
     } else if (timeFav == undefined) {
         res.status(400).send("Seu time está indefinido")
+    } else if (jogadorFav == undefined) {
+        res.status(400).send("Seu Jogador está indefinido")
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, cpf, timeFav)
+        usuarioModel.cadastrar(nome, email, senha, cpf, timeFav, jogadorFav)
             .then(
                 function (resultado) {
                     res.json(resultado);

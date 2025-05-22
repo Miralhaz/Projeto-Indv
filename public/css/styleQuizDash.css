@@ -117,7 +117,14 @@ body {
 }
 
 .info-questao {
-  padding: 15px;
+  padding: 25px;
+  font-size: large;
+}
+
+.pergunta-atual {
+  color: crimson;
+  padding: 20px;
+  font-size: large;
 }
 
 .info-alternativas {

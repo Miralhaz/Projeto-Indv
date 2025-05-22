@@ -95,8 +95,8 @@ body {
   line-height: 1.6;
 }
 
-.universitario-banner {background: linear-gradient(rgb(10, 10, 10, 0.55), rgb(139, 139, 139)), url('../assets/imgs/basquete-universitário.png');
-  
+.universitario-banner {
+  background: linear-gradient(rgb(10, 10, 10, 0.55), rgb(139, 139, 139)), url('../assets/imgs/basquete-universitário.png');
   background-size: cover;
   background-position: center;
   color: white;
@@ -147,7 +147,7 @@ body {
 .banner-em-pe p {
   font-size: 14px;
   line-height: 1.6;
-  color: #333333;
+  color: #000000;
 }
 
 .quiz-section-banner {

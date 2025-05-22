@@ -96,21 +96,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 480px;
-    margin: 25px auto;
-    padding: 20px 10px;
+    width: 600px;
+    margin: 50px auto;
+    padding: 25px;
     border-radius: 8px;
     font-weight: bold;
+    font-size: large;
 }
 
-.grafico-times {
-    background-color: #ffffff;
+.graficos {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px
+}
+
+.grafico-times,
+.grafico-jogadores {
+    background-color: #f9f9f9;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
     width: 500px;
+    height: 500px;
     margin: 5% auto 0 auto;
     padding: 20px;
     border-radius: 8px;
+    transition: all 0.3s ease;
 }

@@ -50,7 +50,7 @@
             <input type="password" id="ipt_confirm_senha" placeholder="Confirme sua senha!">
             <label>Escolha seu time favorito:</label>
             <select class="time-fav" name="time-favorito" id="slt_time_fav">
-                <option value="">-- Selecione um time --</option>
+                <option value="">Selecione um time</option>
                 <option value="1">Atlanta Hawks</option>
                 <option value="2">Boston Celtics</option>
                 <option value="3">Brooklyn Nets</option>
@@ -83,6 +83,16 @@
                 <option value="30">Utah Jazz</option>
             </select>
 
+            <label>Escolha seu jogador favorito:</label>
+            <select class="time-fav" name="jogador-favorito" id="slt_jogador_fav">
+                <option value="">Escolha seu Jogador Favorito</option>                
+                <option value="1"> Lebron James </option>
+                <option value="2"> Kobe Bryant </option>
+                <option value="3"> Micheal Jordan </option>
+                <option value="4"> Steph Curry </option>
+                <option value="5"> Shaquille O Neal </option>
+            </select>
+
             <div class="alerta_erro">
                 <div class="card_erro" id="cardErro">
                     <span id="mensagem_erro"></span>
@@ -113,16 +123,32 @@
             var confirmacaoSenhaVar = ipt_confirm_senha.value;
             var cpfVar = ipt_cpf.value;
             var timeFavVar = slt_time_fav.value;
+            var jogadorFavVar = slt_jogador_fav.value;
 
-            var simbolos = ["!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "_", "+", "=", "?", "/", ".", ",", ";", ":"];
-            var temSimbolo = false;
+            var simbolos = ["!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "_", "+", "=", "?", "/", ".", ",", ";", ":"]
+            var temSimbolo = false 
+            var primeiraLetraMaiúscula = false
 
             for (var i = 0; i < senhaVar.length; i++) {
+
                 for (var j = 0; j < simbolos.length; j++) {
+
                     if (senhaVar[i] === simbolos[j]) {
-                        temSimbolo = true;
+
+                        temSimbolo = true
+
                     }
                 }
+            }
+
+            for (var j = 0; j < senhaVar.length; j++){
+
+                if (senhaVar[0] == senhaVar[0].toUpperCase()){
+
+                    primeiraLetraMaiúscula = true
+
+                }
+
             }
 
             if (
@@ -131,22 +157,23 @@
                 senhaVar == "" ||
                 confirmacaoSenhaVar == "" ||
                 cpfVar == "" ||
-                timeFavVar == ""
+                timeFavVar == "" ||
+                jogadorFavVar == ""
             ) {
                 cardErro.style.display = "block";
                 mensagem_erro.innerHTML = `<p style="color:red"> Algum campo está em branco! Verifique todos os campos! </p>`;
                 finalizarAguardar();
                 return false;
 
-            } else if (nomeVar.length < 5) {
-                cardErro.style.display = "block"
-                mensagem_erro.innerHTML = `<p style="color:red"> Nome deve conter no mínimo 5 caracteres! </p>`
-                finalizarAguardar();
-                return false;
-
             } else if (senhaVar.length <= 8) {
                 cardErro.style.display = "block"
                 mensagem_erro.innerHTML = `<p style="color:red"> Senha deve conter mais de 8 caracteres! </p>`
+                finalizarAguardar();
+                return false;
+
+            } else if (!primeiraLetraMaiúscula) {
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = `<p style="color:red"> A primeira letra da Senha deve ser <strong> Maiúscula </strong> </p>`
                 finalizarAguardar();
                 return false;
 
@@ -172,6 +199,7 @@
                 setInterval(sumirMensagem, 5000);
             }
 
+            console.log(jogadorFavVar)
             fetch("/usuarios/cadastrar", {
                 method: "POST",
                 headers: {
@@ -182,7 +210,8 @@
                     emailServer: emailVar,
                     senhaServer: senhaVar,
                     cpfServer: cpfVar,
-                    timeFavServer: timeFavVar
+                    timeFavServer: timeFavVar,
+                    jogadorFavServer: jogadorFavVar
                 }),
             })
                 .then(function (resposta) {
