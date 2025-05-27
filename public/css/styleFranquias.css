@@ -123,6 +123,10 @@ body {
   background-color: #8c5210;
 }
 
+.cf-button:focus {
+  outline: none;
+}
+
 #resumo,
 #resumo2 {
   background-color: white;

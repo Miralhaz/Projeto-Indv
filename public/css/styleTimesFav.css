@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -102,6 +101,30 @@ body {
     border-radius: 8px;
     font-weight: bold;
     font-size: large;
+}
+
+.kpi-container {
+    display: flex;
+    justify-content: center;
+}
+
+.kpi {
+    background-color: #f9f9f9;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 5% auto 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#resultado_times,
+#resultado_jogadores {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
 }
 
 .graficos {
