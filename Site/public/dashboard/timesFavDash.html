@@ -62,7 +62,7 @@
 
         <div class="dash">
             <div class="inicial">
-                Veja aqui quais são os times e jogadores favoritos dos usuários do nosso blog:
+                <p>Veja aqui quais são os times e jogadores favoritos dos usuários do nosso blog:</p>
             </div>
 
             <div class="kpi-container">
@@ -138,7 +138,7 @@
             }
         }
 
-        resultado_times.innerHTML = `${timeFavorito} (${quantidadeFavorito} usuário(s) escolheram ele)`
+        resultado_times.innerHTML = `${timeFavorito} <br> (${quantidadeFavorito} usuário(s) escolheram ele)`
 
         var ctx = document.getElementById('pizza_times').getContext('2d');
         var myChart = new Chart(ctx, {
@@ -152,7 +152,8 @@
                         '#007A33', '#000000', '#006BB6', '#006BB6', '#CE1141', '#CE1141', '#860038', '#C8102E', '#002D62',
                         '#00471B', '#E03A3E', '#1D1160', '#98002E', '#0077C0', '#002B5C', '#0E2240', '#0C2340', '#007AC1',
                         '#E03A3E', '#002B5C', '#1D428A', '#C8102E', '#552583', '#E56020', '#5A2D81', '#00538C', '#CE1141',
-                        '#12173F', '#0C2340', '#C4CED4']
+                        '#12173F', '#0C2340', '#C4CED4'],
+                    borderRadius: 8
                 }]
             },
             options: {
@@ -239,7 +240,7 @@
             }
         }
 
-        resultado_jogadores.innerHTML = `${jogadorFavorito} (${quantidadeFavorito} usuário(s) escolheram ele)`
+        resultado_jogadores.innerHTML = `${jogadorFavorito} <br> (${quantidadeFavorito} usuário(s) escolheram ele)`
 
         var ctx = document.getElementById('pizza_jogadores').getContext('2d');
         var myChart = new Chart(ctx, {
@@ -249,7 +250,7 @@
                 datasets: [{
                     data: quantidade,
                     backgroundColor: [
-                        '#007A33', '#000000', '#006BB6', '#006BB6', '#CE1141']
+                        '#552583', '#FDB927', '#CE1141', '#1D428A', '#007A33']
                 }]
             },
             options: {

@@ -132,10 +132,29 @@
                         'red'
                     ],
                     borderWidth: 1,
-                    borderRadius: 4
+                    borderRadius: 8
                 }]
             },
             options: {
+                indexAxis: 'x',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Resultados do Quiz do Usuário.',
+                        font: {
+                            size: 18
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 20
+                        }
+                    },
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
