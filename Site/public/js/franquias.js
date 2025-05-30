@@ -127,7 +127,7 @@ document.getElementById("cf_leste").addEventListener("change", function () {
     if (timesLeste[slt_cf_leste]) {
 
         var time = timesLeste[slt_cf_leste]
-        
+
         resumo.innerHTML = `<h3>${time.titulo}</h3>
                             <p><strong>Títulos:</strong> ${time.titulos}</p>
                             <p><strong>Principais jogadores:</strong> ${time.jogadores.join(", ")}</p>
@@ -138,7 +138,7 @@ document.getElementById("cf_leste").addEventListener("change", function () {
 
     } else {
 
-        resumo.innerHTML = "Selecione um time para ver o resumo."
+        resumo.innerHTML = "Selecione uma franquia para ver o resumo."
 
     }
 })
@@ -286,7 +286,7 @@ document.getElementById("cf_oeste").addEventListener("change", function () {
 
     } else {
 
-        resumo2.innerHTML = "Selecione um time para ver o resumo."
+        resumo2.innerHTML = "Selecione uma franquia para ver o resumo."
 
     }
 })

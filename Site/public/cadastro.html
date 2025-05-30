@@ -85,7 +85,7 @@
 
             <label>Escolha seu jogador favorito:</label>
             <select class="time-fav" name="jogador-favorito" id="slt_jogador_fav">
-                <option value="">Escolha seu Jogador Favorito</option>                
+                <option value="">Escolha seu Jogador Favorito</option>
                 <option value="1"> Lebron James </option>
                 <option value="2"> Kobe Bryant </option>
                 <option value="3"> Micheal Jordan </option>
@@ -126,8 +126,15 @@
             var jogadorFavVar = slt_jogador_fav.value;
 
             var simbolos = ["!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "_", "+", "=", "?", "/", ".", ",", ";", ":"]
-            var temSimbolo = false 
+            var temSimbolo = false
             var primeiraLetraMaiúscula = false
+            var letras = [
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
+                "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
+                "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" 
+            ]
+            var temLetra = false
 
             for (var i = 0; i < senhaVar.length; i++) {
 
@@ -141,9 +148,23 @@
                 }
             }
 
-            for (var j = 0; j < senhaVar.length; j++){
+            for (var i = 0; i < senhaVar.length; i++){
 
-                if (senhaVar[0] == senhaVar[0].toUpperCase()){
+                for (var j = 0; j < letras.length; j++){
+
+                    if (senhaVar[i] === letras[j]){
+
+                        temLetra = true
+
+                    }
+
+                }
+
+            }
+
+            for (var j = 0; j < senhaVar.length; j++) {
+
+                if (senhaVar[0] == senhaVar[0].toUpperCase()) {
 
                     primeiraLetraMaiúscula = true
 
@@ -164,7 +185,7 @@
                 mensagem_erro.innerHTML = `<p style="color:red"> Algum campo está em branco! Verifique todos os campos! </p>`;
                 finalizarAguardar();
                 return false;
-
+            
             } else if (senhaVar.length <= 8) {
                 cardErro.style.display = "block"
                 mensagem_erro.innerHTML = `<p style="color:red"> Senha deve conter mais de 8 caracteres! </p>`
@@ -180,6 +201,12 @@
             } else if (!temSimbolo) {
                 cardErro.style.display = "block"
                 mensagem_erro.innerHTML = `<p style="color:red"> Senha deve conter pelo menos 1 símbolo! </p>`
+                finalizarAguardar();
+                return false;
+
+            } else if (!temLetra) {
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = `<p style="color:red"> Senha deve conter pelo menos 1 letra! </p>`
                 finalizarAguardar();
                 return false;
 

@@ -142,7 +142,7 @@ body {
   margin-top: 20px; 
 }
 
-.alternativas span{
+.alternativas input{
   background-color: #122855;
   color: #ffffff;
   width: 30%;
@@ -156,7 +156,7 @@ body {
   cursor: pointer;
 }
 
-.alternativas span:hover {
+.alternativas input:hover {
   background-color:#e03a3e;
   transform: scale(1.05);
 }

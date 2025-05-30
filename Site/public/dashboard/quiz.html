@@ -69,11 +69,9 @@
 
             <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
                 <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                    <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                        <span id="spanPontuacaoFinal">***</span>
-                    </span>
-                    <span id="msgFinal" class="width-fit-content">***</span>
+                    <span id="pontuacaoFinal" class="width-fit-content"></span>
                 </div>
+                <span id="msgFinal" class="width-fit-content"></span>
             </div>
 
             <div id="jogo" class="width-fit-content flex-colunar border-secondary">
@@ -92,22 +90,19 @@
                 </div>
 
                 <div id="opcoes" class="alternativas">
-                    <span>
-                        <input type="radio" id="primeiraOpcao" name="option" class="radio" value="1" />
-                        <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                    </span>
-                    <span>
-                        <input type="radio" id="segundaOpcao" name="option" class="radio" value="2" />
-                        <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                    </span>
-                    <span>
-                        <input type="radio" id="terceiraOpcao" name="option" class="radio" value="3" />
-                        <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                    </span>
-                    <span>
-                        <input type="radio" id="quartaOpcao" name="option" class="radio" value="4" />
-                        <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
-                    </span>
+                    <br>
+                    <input type="radio" id="primeiraOpcao" name="option" class="radio" value="1" />
+                    <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                    <br>
+                    <input type="radio" id="segundaOpcao" name="option" class="radio" value="2" />
+                    <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                    <br>
+                    <input type="radio" id="terceiraOpcao" name="option" class="radio" value="3" />
+                    <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                    <br>
+                    <input type="radio" id="quartaOpcao" name="option" class="radio" value="4" />
+                    <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+
                 </div>
 
                 <div id="botoes" class="flex-colunar padding-8">
@@ -128,5 +123,13 @@
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    let inputRadio1 = primeiraOpcao.value
+    let inputRadio2 = segundaOpcao.value
+    let inputRadio3 = terceiraOpcao.value
+    let inputRadio4 = quartaOpcao.value
+
+
+
 </script>
+
 </html>

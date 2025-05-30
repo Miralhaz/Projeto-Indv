@@ -33,7 +33,7 @@ function iniciarQuiz() {
 
 function buscar() {
 
-    fetch("http://localhost:3333/perguntas/buscar")
+    fetch("/perguntas/buscar")
         .then(res => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             return res.json();
@@ -61,16 +61,16 @@ function preencherHTMLcomQuestaoAtual(index) {
     const questaoAtual = listaDeQuestoes[index];
     numeroDaQuestaoAtual = index;
 
-    document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = index + 1;
-    document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
-    document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativa1;
-    document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativa2;
+    spanNumeroDaQuestaoAtual.innerHTML = index + 1;
+    spanQuestaoExibida.innerHTML = questaoAtual.pergunta;
+    labelOpcaoUm.innerHTML = questaoAtual.alternativa1;
+    labelOpcaoDois.innerHTML = questaoAtual.alternativa2;
 
     if (questaoAtual.alternativa3 && questaoAtual.alternativa4) {
         document.getElementById("terceiraOpcao").parentElement.style.display = "block";
         document.getElementById("quartaOpcao").parentElement.style.display = "block";
-        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativa3;
-        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativa4;
+        labelOpcaoTres.innerHTML = questaoAtual.alternativa3;
+        labelOpcaoQuatro.innerHTML = questaoAtual.alternativa4;
     } else {
         document.getElementById("terceiraOpcao").parentElement.style.display = "none";
         document.getElementById("quartaOpcao").parentElement.style.display = "none";
@@ -184,25 +184,10 @@ function limparCoresBackgroundOpcoes() {
 function finalizarJogo() {
 
     let mensagem = "";
-    let classe = "";
-    const porcentagem = pontuacaoFinal / quantidadeDeQuestoes;
 
-    if (porcentagem <= 0.3) {
-        mensagem = "<br> Parece que você não estudou...";
-        classe = "text-danger-with-bg";
-    } else if (porcentagem < 0.9) {
-        mensagem = "<br> Pode melhorar na próxima, hein!";
-        classe = "text-warning-with-bg";
-    } else {
-        mensagem = "<br> Uau, parabéns!";
-        classe = "text-success-with-bg";
-    }
+    mensagem += `<p style="color:green" <br> Você está sendo redirecionado para a dashboard | Agaurde. </p>`;
 
-    mensagem += `<br> Você acertou ${Math.round(porcentagem * 100)}% das questões.`;
-
-    document.getElementById("msgFinal").innerHTML = mensagem;
-    document.getElementById("msgFinal").classList.add(classe);
-    document.getElementById("spanPontuacaoFinal").innerHTML = pontuacaoFinal;
+    msgFinal.innerHTML = mensagem;
 
     document.getElementById("jogo").classList.add("text-new-gray");
     btnSubmeter.disabled = true;
@@ -243,7 +228,9 @@ function salvarResultadosNoBanco() {
     })
     .then(data => {
         console.log("Resultados do quiz salvos com sucesso!", data);
-        
+        setTimeout(() => {
+            window.location = "dashboard.html"
+        }, 2000)
     })
     .catch(error => {
         console.error("Erro ao salvar os resultados do quiz:", error);
