@@ -59,36 +59,36 @@ CREATE TABLE quizPerguntas (
 );
 
 INSERT INTO times (nome) VALUES
+('Atlanta Hawks'),
 ('Boston Celtics'),
 ('Brooklyn Nets'),
-('New York Knicks'),
-('Philadelphia 76ers'),
-('Toronto Raptors'),
+('Charlotte Hornets'),
 ('Chicago Bulls'),
 ('Cleveland Cavaliers'),
 ('Detroit Pistons'),
 ('Indiana Pacers'),
-('Milwaukee Bucks'),
-('Atlanta Hawks'),
-('Charlotte Hornets'),
 ('Miami Heat'),
+('Milwaukee Bucks'),
+('New York Knicks'),
 ('Orlando Magic'),
+('Philadelphia 76ers'),
+('Toronto Raptors'),
 ('Washington Wizards'),
+('Dallas Mavericks'),
 ('Denver Nuggets'),
-('Minnesota Timberwolves'),
-('Oklahoma City Thunder'),
-('Portland Trail Blazers'),
-('Utah Jazz'),
 ('Golden State Warriors'),
+('Houston Rockets'),
 ('Los Angeles Clippers'),
 ('Los Angeles Lakers'),
-('Phoenix Suns'),
-('Sacramento Kings'),
-('Dallas Mavericks'),
-('Houston Rockets'),
 ('Memphis Grizzlies'),
+('Minnesota Timberwolves'),
 ('New Orleans Pelicans'),
-('San Antonio Spurs');
+('Oklahoma City Thunder'),
+('Phoenix Suns'),
+('Portland Trail Blazers'),
+('Sacramento Kings'),
+('San Antonio Spurs'),
+('Utah Jazz');
 
 INSERT INTO jogadores (nome)
 VALUES
@@ -108,9 +108,3 @@ VALUES
 ('Quantos jogadores compõem um time titular da NBA?', '4', '5', '6', '7', 2),
 ('Qual franquia foi a primeira campeã da NBA?', 'Boston Celtics', 'New York Knicks', 'Philadelphia Warriors', 'Los Angeles Lakers', 3),
 ('Quem foi o MVP da temporada 2022-23?', 'Luka Doncic', 'Nikola Jokic', 'Giannis Antetokounmpo', 'Joel Embiid', 4);
-
-select * from usuario;
-select * from quiz;
-select * from quizPerguntas;
-select * from aviso;
-select * from jogadores;

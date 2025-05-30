@@ -126,7 +126,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     padding: 40px 20px;
-    background-color: #ffb057
+    background-color: #d1d1d1
 }
 
 .container-funcoes>div {
