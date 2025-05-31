@@ -45,11 +45,7 @@
             <label> Senha: </label>
             <input type="password" id="ipt_senha" placeholder="Digite sua Senha aqui!">
 
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div>
+            <div id="mensagem_erro"></div>
 
             <div id="div_aguardar" class="loading-div"></div>
 
@@ -109,9 +105,10 @@ function entrar() {
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.idUser;
-            
+                
                 mensagem_erro.innerHTML = `<p style="color:green"> Login bem-sucedido. Indo para a dashboard... </p>`
                 div_aguardar.innerHTML = `<img src="assets/circle-loading.gif" alt="">`
+                div_erros_login.innerHTML = ``
 
                 setTimeout(function () {
                     window.location = "./dashboard/indexDash.html";

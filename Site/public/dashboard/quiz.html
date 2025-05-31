@@ -90,26 +90,31 @@
                 </div>
 
                 <div id="opcoes" class="alternativas">
-                    <br>
-                    <input type="radio" id="primeiraOpcao" name="option" class="radio" value="1" />
-                    <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                    <br>
-                    <input type="radio" id="segundaOpcao" name="option" class="radio" value="2" />
-                    <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                    <br>
-                    <input type="radio" id="terceiraOpcao" name="option" class="radio" value="3" />
-                    <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                    <br>
-                    <input type="radio" id="quartaOpcao" name="option" class="radio" value="4" />
-                    <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+
+                    <div class="opcao" onclick="primeiraOpcao.checked = true">
+                        <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                        <input type="radio" id="primeiraOpcao" name="option" class="radio" value="1" />
+                    </div>
+                    <div class="opcao" onclick="segundaOpcao.checked = true">
+                        <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                        <input type="radio" id="segundaOpcao" name="option" class="radio" value="2" />
+                    </div>
+                    <div class="opcao" onclick="terceiraOpcao.checked = true">
+                        <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                        <input type="radio" id="terceiraOpcao" name="option" class="radio" value="3" />
+                    </div>
+                    <div class="opcao" onclick="quartaOpcao.checked = true">
+                        <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                        <input type="radio" id="quartaOpcao" name="option" class="radio" value="4" />
+                    </div>
 
                 </div>
 
                 <div id="botoes" class="flex-colunar padding-8">
-                    <button onclick="submeter()" id="btnSubmeter" class="btn-submeter">Submeter resposta</button>
-                    <button onclick="avancar()" id="btnProx" class="btn-avancar" disabled>Avançar para próxima
+                    <button onclick="submeter()" id="btnSubmeter" class="btns-quiz">Submeter resposta</button>
+                    <button onclick="avancar()" id="btnProx" class="btns-quiz" disabled>Avançar para próxima
                         questão</button>
-                    <button onclick="tentarNovamente()" id="btnTentarNovamente" class="btn-novamente" disabled>Tentar
+                    <button onclick="tentarNovamente()" id="btnTentarNovamente" class="btns-quiz" disabled>Tentar
                         novamente</button>
                 </div>
 
@@ -122,13 +127,6 @@
 <script>
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    let inputRadio1 = primeiraOpcao.value
-    let inputRadio2 = segundaOpcao.value
-    let inputRadio3 = terceiraOpcao.value
-    let inputRadio4 = quartaOpcao.value
-
-
 
 </script>
 

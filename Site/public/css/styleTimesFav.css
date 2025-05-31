@@ -66,10 +66,10 @@ body {
     width: 20%;
     border-radius: 10px;
     text-align: center;
-    padding: 10px 15px;
-    margin-bottom: 100px;
+    padding: 0px 10px;
+    margin-bottom: 50px;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
     display: block;
 }
 

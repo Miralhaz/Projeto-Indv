@@ -108,7 +108,8 @@
             })
             .catch(error => {
                 console.error("Erro ao buscar resultados do quiz:", error);
-
+                alert("Você ainda não realizou o quiz, por favor faça e depois volte aqui para ver seu desempenho!!")
+                window.location = "quiz.html"
             });
     }
 
