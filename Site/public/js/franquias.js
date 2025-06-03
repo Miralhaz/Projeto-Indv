@@ -1,7 +1,7 @@
 document.getElementById("cf_leste").addEventListener("change", function () {
     var slt_cf_leste = cf_leste.value
 
-    var timesLeste = {
+    var franquiasLeste = {
         "ah": {
             titulo: "Atlanta Hawks",
             titulos: 1,
@@ -124,16 +124,16 @@ document.getElementById("cf_leste").addEventListener("change", function () {
         }
     }
 
-    if (timesLeste[slt_cf_leste]) {
+    if (franquiasLeste[slt_cf_leste]) {
 
-        var time = timesLeste[slt_cf_leste]
+        var franquia = franquiasLeste[slt_cf_leste]
 
-        resumo.innerHTML = `<h3>${time.titulo}</h3>
-                            <p><strong>Títulos:</strong> ${time.titulos}</p>
-                            <p><strong>Principais jogadores:</strong> ${time.jogadores.join(", ")}</p>
-                            <p><strong>Melhor temporada:</strong> ${time.melhor_temporada}</p>
-                            <p><strong>Pior temporada:</strong> ${time.pior_temporada}</p>
-                            <p><strong>Playoffs:</strong> ${time.playoffs}</p>
+        resumo.innerHTML = `<h3>${franquia.titulo}</h3>
+                            <p><strong>Títulos:</strong> ${franquia.titulos}</p>
+                            <p><strong>Principais jogadores:</strong> ${franquia.jogadores.join(", ")}</p>
+                            <p><strong>Melhor temporada:</strong> ${franquia.melhor_temporada}</p>
+                            <p><strong>Pior temporada:</strong> ${franquia.pior_temporada}</p>
+                            <p><strong>Playoffs:</strong> ${franquia.playoffs}</p>
                             `
 
     } else {
@@ -150,7 +150,7 @@ document.getElementById("cf_oeste").addEventListener("change", function () {
 
     var slt_cf_oeste = cf_oeste.value
 
-    var timesOeste = {
+    var franquiasOeste = {
         "dm": {
             titulo: "Dallas Mavericks",
             titulos: 1,
@@ -273,16 +273,16 @@ document.getElementById("cf_oeste").addEventListener("change", function () {
         }
     };
 
-    if (timesOeste[slt_cf_oeste]) {
+    if (franquiasOeste[slt_cf_oeste]) {
 
-        var time = timesOeste[slt_cf_oeste]
+        var franquia = franquiasOeste[slt_cf_oeste]
 
-        resumo2.innerHTML = `<h3>${time.titulo}</h3>
-                             <p><strong>Títulos:</strong> ${time.titulos}</p>
-                             <p><strong>Principais jogadores:</strong> ${time.jogadores.join(", ")}</p>
-                             <p><strong>Melhor temporada:</strong> ${time.melhor_temporada}</p>
-                             <p><strong>Pior temporada:</strong> ${time.pior_temporada}</p>
-                             <p><strong>Playoffs:</strong> ${time.playoffs}</p>`
+        resumo2.innerHTML = `<h3>${franquia.titulo}</h3>
+                             <p><strong>Títulos:</strong> ${franquia.titulos}</p>
+                             <p><strong>Principais jogadores:</strong> ${franquia.jogadores.join(", ")}</p>
+                             <p><strong>Melhor temporada:</strong> ${franquia.melhor_temporada}</p>
+                             <p><strong>Pior temporada:</strong> ${franquia.pior_temporada}</p>
+                             <p><strong>Playoffs:</strong> ${franquia.playoffs}</p>`
 
     } else {
 
