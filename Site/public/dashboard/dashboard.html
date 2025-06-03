@@ -11,7 +11,6 @@
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -62,7 +61,7 @@
             </div>
 
             <div class="btn-nav">
-                <a href="timesFavDash.html">
+                <a href="franquiasFavDash.html">
                     <h3>Franquias Favoritas</h3>
                 </a>
             </div>
@@ -75,7 +74,18 @@
 
     <div class="dash">
         <div class="inicial">
-            Veja aqui seu desempenho no quiz sobre a NBA:
+            <p>Veja aqui seu desempenho no quiz sobre a NBA:</p>
+        </div>
+
+        <div class="kpi-container">
+            <div class="kpi">
+                <h3> Porcentagem de desempenho: </h3>
+                <div id="porcentagem"></div>
+            </div>
+            <div class="kpi">
+                <h3> Nível: </h3>
+                <div id="nivel"></div>
+            </div>
         </div>
 
         <div class="grafico-container">
@@ -115,6 +125,23 @@
 
     function exibirGrafico(acertos, erros) {
 
+        let totalQuestoes = acertos + erros
+        let porcentagemDesempenho = (acertos / totalQuestoes) * 100
+
+        porcentagem.innerHTML = `Você acertou ${porcentagemDesempenho}% das questões`
+
+        if (porcentagemDesempenho < 12.5) {
+            nivel.innerHTML = `Você é apenas um casual, precisa conhecer mais sobre a NBA!`
+        } else if (porcentagemDesempenho >= 12.5 && porcentagemDesempenho < 25) {
+            nivel.innerHTML = `Você sabe um pouco sobre a NBA, pode melhorar!`
+        } else if (porcentagemDesempenho >= 25 && porcentagemDesempenho < 50) {
+            nivel.innerHTML = `Você conhece até que o suficiente sobre a NBA. Muito bem!`
+        } else if (porcentagemDesempenho >= 50 && porcentagemDesempenho < 87.5) {
+            nivel.innerHTML = `Uau, você não é apenas um casual. Parabéns!!`
+        } else {
+            nivel.innerHTML = `Você sabe tudo sobre a NBA. (até me assusta, faça outra coisa da vida além de saber sobre a NBA)`
+        }
+
         const ctx = document.getElementById('resultadoQuizChart').getContext('2d');
 
         new Chart(ctx, {
@@ -125,11 +152,11 @@
                     label: 'Resultado do Quiz',
                     data: [acertos, erros],
                     backgroundColor: [
-                        'lightgreen',
+                        'green',
                         'red'
                     ],
                     borderColor: [
-                        'lightgreen',
+                        'green',
                         'red'
                     ],
                     borderWidth: 1,
@@ -180,4 +207,5 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 </script>
+
 </html>

@@ -99,7 +99,7 @@
     }
 
     function obterDados() {
-        fetch('/timesFav')
+        fetch('/franquiasFav')
             .then(response => response.text())
             .then(text => {
                 console.log('Resposta do servidor:', text);
@@ -118,33 +118,33 @@
 
     function plotarGraficoPizza(data) {
 
-        var times = [];
+        var franquias = [];
         var quantidade = [];
 
         var quantidadeFavorito = 0
-        var timeFavorito = ''
+        var franquiaFavorita = ''
 
         for (var i = 0; i < data.length; i++) {
 
             var nome = data[i].nome
             var qtd = data[i].quantidade
 
-            times.push(data[i].nome);
+            franquias.push(data[i].nome);
             quantidade.push(data[i].quantidade)
 
             if (qtd > quantidadeFavorito) {
                 quantidadeFavorito = qtd
-                timeFavorito = nome
+                franquiaFavorita = nome
             }
         }
 
-        resultado_times.innerHTML = `${timeFavorito} <br> (${quantidadeFavorito} usuário(s) escolheram ele)`
+        resultado_times.innerHTML = `${franquiaFavorita} <br> (${quantidadeFavorito} usuário(s) escolheram ele)`
 
         var ctx = document.getElementById('pizza_times').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: times,
+                labels: franquias,
                 datasets: [{
                     label: 'Quantidade de usuários',
                     data: quantidade,
@@ -157,7 +157,7 @@
                 }]
             },
             options: {
-                indexAxis: 'x',
+                indexAxis: 'y',
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
@@ -166,7 +166,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Distribuição de usuários por time',
+                        text: 'Distribuição de usuários por franquia',
                         font: {
                             size: 18
                         },

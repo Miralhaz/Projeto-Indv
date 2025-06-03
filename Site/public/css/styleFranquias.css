@@ -127,6 +127,26 @@ body {
   outline: none;
 }
 
+.cf-button-click {
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #a86415;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.cf-button-click:hover {
+  background-color: #ffffff;
+  color: #a86415;
+  transform: scale(1.05);
+}
+
 #resumo,
 #resumo2 {
   background-color: white;

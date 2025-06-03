@@ -1,10 +1,10 @@
-var timesFavModel = require("../models/timesFavModel");
+var franquiasFavModel = require("../models/franquiasFavModel");
 
 function obterDados(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        timesFavModel.obterDados()
+        franquiasFavModel.obterDados()
             .then(
                 function (resultado) {
                     if (resultado.length > 0){

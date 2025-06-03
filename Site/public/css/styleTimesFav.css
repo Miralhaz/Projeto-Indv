@@ -86,7 +86,7 @@ body {
     left: 18%;
     background-color: #e03a3e;
     height: 100vh;
-    overflow: auto;
+    overflow: hidden;
     color: #000000;
 }
 
@@ -95,9 +95,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 550px;
-    margin: 50px auto;
-    padding: 20px;
+    width: 700px;
+    margin: 55px auto;
+    padding: 20px 10px;
     border-radius: 8px;
     font-weight: bold;
     font-size: large;
@@ -118,7 +118,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 400px;
-    margin: 5% auto 0 auto;
+    margin: 30px;
     padding: 10px;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -139,7 +139,6 @@ body {
 .graficos {
     display: flex;
     justify-content: center;
-    margin-top: 80px
 }
 
 .grafico-times,
@@ -148,9 +147,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 500px;
-    margin: 5% auto 0 auto;
+    width: 450px;
+    height: 450px;
+    margin: 30px;
     padding: 20px;
     border-radius: 8px;
     transition: all 0.3s ease;

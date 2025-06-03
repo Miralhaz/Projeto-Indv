@@ -88,7 +88,7 @@ body {
     left: 18%;
     background-color: #e03a3e;
     height: 100vh;
-    overflow: auto;
+    overflow: hidden;
     color: #000000;
 }
 
@@ -97,11 +97,45 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 480px;
-    margin: 25px auto;
+    width: 550px;
+    margin: 55px auto;
     padding: 20px 10px;
     border-radius: 8px;
     font-weight: bold;
+    font-size: large;
+}
+
+.inicial p {
+    text-align: center;
+}
+
+.kpi-container {
+    display: flex;
+    justify-content: center;
+}
+
+.kpi {
+    background-color: #f9f9f9;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.kpi h3 {
+    display: flex;
+    justify-content: center;
+}
+
+#porcentagem,
+#nivel {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
 }
 
 .grafico-container {
@@ -109,9 +143,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
-    width: 500px;
-    margin: 5% auto 0 auto;
+    height: 450px;
+    width: 450px;
+    margin: 30px auto;
     padding: 20px;
     border-radius: 8px;
 }

@@ -20,7 +20,7 @@ var usuarioRouter = require("./src/routes/usuarios");
 var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
 var perguntasRouter = require("./src/routes/perguntas");
-var timesFavRouter = require("./src/routes/timesFav")
+var franquiasFavRouter = require("./src/routes/franquiasFav")
 var jogadoresFavRouter = require("./src/routes/jogadoresFav")
 
 app.use(express.json());
@@ -34,7 +34,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);
 app.use("/perguntas", perguntasRouter);
-app.use("/timesFav", timesFavRouter);
+app.use("/franquiasFav", franquiasFavRouter);
 app.use("/jogadoresFav", jogadoresFavRouter);
 
 app.listen(PORTA_APP, function () {

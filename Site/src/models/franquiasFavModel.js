@@ -8,7 +8,8 @@ function obterDados() {
         SELECT t.idTime, t.nome, COUNT(u.idUser) AS quantidade
         FROM times t
         LEFT JOIN usuario u ON t.idTime = u.fktime
-        GROUP BY t.idTime;
+        GROUP BY t.idTime
+        ORDER BY quantidade DESC;
     `;
     
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

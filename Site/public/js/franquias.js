@@ -1,4 +1,5 @@
-document.getElementById("cf_leste").addEventListener("change", function () {
+function franquiasDoLeste(){
+
     var slt_cf_leste = cf_leste.value
 
     var franquiasLeste = {
@@ -141,12 +142,12 @@ document.getElementById("cf_leste").addEventListener("change", function () {
         resumo.innerHTML = "Selecione uma franquia para ver o resumo."
 
     }
-})
+}
 
 
 
 
-document.getElementById("cf_oeste").addEventListener("change", function () {
+function franquiasDoOeste(){
 
     var slt_cf_oeste = cf_oeste.value
 
@@ -289,4 +290,4 @@ document.getElementById("cf_oeste").addEventListener("change", function () {
         resumo2.innerHTML = "Selecione uma franquia para ver o resumo."
 
     }
-})
+}
