@@ -9,7 +9,8 @@ function franquiasDoLeste(){
             jogadores: ["Dominique Wilkins", "Trae Young"],
             melhor_temporada: "2014-15 (60 vitórias)",
             pior_temporada: "2004-05 (13 vitórias)",
-            playoffs: "Campeão em 1958"
+            playoffs: "Campeão em 1958",
+            logo: `<img src="./assets/imgs/Atlanta_Hawks_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "bc": {
             titulo: "Boston Celtics",
@@ -17,7 +18,8 @@ function franquiasDoLeste(){
             jogadores: ["Bill Russell", "Larry Bird", "Paul Pierce"],
             melhor_temporada: "1985-86 (67 vitórias)",
             pior_temporada: "1996-97 (15 vitórias)",
-            playoffs: "18 títulos, último em 2024"
+            playoffs: "18 títulos, último em 2024",
+            logo: `<img src="./assets/imgs/Boston_Celtics_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "bn": {
             titulo: "Brooklyn Nets",
@@ -25,7 +27,8 @@ function franquiasDoLeste(){
             jogadores: ["Jason Kidd", "Kevin Durant", "Kyrie Irving"],
             melhor_temporada: "2001-02 (52 vitórias)",
             pior_temporada: "2009-10 (12 vitórias)",
-            playoffs: "Finalista em 2002 e 2003"
+            playoffs: "Finalista em 2002 e 2003",
+            logo: `<img src="./assets/imgs/Brooklyn_Nets_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "ch": {
             titulo: "Charlotte Hornets",
@@ -33,7 +36,8 @@ function franquiasDoLeste(){
             jogadores: ["Kemba Walker", "Larry Johnson"],
             melhor_temporada: "1996-97 (54 vitórias)",
             pior_temporada: "2011-12 (7 vitórias)",
-            playoffs: "Sem finais da NBA"
+            playoffs: "Sem finais da NBA",
+            logo: `<img src="./assets/imgs/Charlotte_Hornets_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "cb": {
             titulo: "Chicago Bulls",
@@ -41,7 +45,8 @@ function franquiasDoLeste(){
             jogadores: ["Michael Jordan", "Scottie Pippen", "Derrick Rose"],
             melhor_temporada: "1995-96 (72 vitórias)",
             pior_temporada: "1999-00 (17 vitórias)",
-            playoffs: "6 títulos, último em 1998"
+            playoffs: "6 títulos, último em 1998",
+            logo: `<img src="./assets/imgs/Chicago_Bulls_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "cc": {
             titulo: "Cleveland Cavaliers",
@@ -49,7 +54,8 @@ function franquiasDoLeste(){
             jogadores: ["LeBron James", "Kyrie Irving"],
             melhor_temporada: "2015-16 (57 vitórias)",
             pior_temporada: "1970-71 (15 vitórias)",
-            playoffs: "Campeão em 2016"
+            playoffs: "Campeão em 2016",
+            logo: `<img src="./assets/imgs/Cleveland_Cavaliers_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "dp": {
             titulo: "Detroit Pistons",
@@ -57,7 +63,8 @@ function franquiasDoLeste(){
             jogadores: ["Isiah Thomas", "Ben Wallace", "Chauncey Billups"],
             melhor_temporada: "2005-06 (64 vitórias)",
             pior_temporada: "2022-23 (17 vitórias)",
-            playoffs: "3 títulos, último em 2004"
+            playoffs: "3 títulos, último em 2004",
+            logo: `<img src="./assets/imgs/Detroit_Pistons_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "ip": {
             titulo: "Indiana Pacers",
@@ -65,7 +72,8 @@ function franquiasDoLeste(){
             jogadores: ["Reggie Miller", "Paul George", "Tyrese Haliburton"],
             melhor_temporada: "2003-04 (61 vitórias)",
             pior_temporada: "1982-83 (20 vitórias)",
-            playoffs: "Finalista em 2000"
+            playoffs: "Finalista em 2000",
+            logo: `<img src="./assets/imgs/Indiana_Pacers_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "mh": {
             titulo: "Miami Heat",
@@ -73,7 +81,8 @@ function franquiasDoLeste(){
             jogadores: ["Dwyane Wade", "LeBron James", "Shaquille O’Neal"],
             melhor_temporada: "2012-13 (66 vitórias)",
             pior_temporada: "2007-08 (15 vitórias)",
-            playoffs: "3 títulos, último em 2013"
+            playoffs: "3 títulos, último em 2013",
+            logo: `<img src="./assets/imgs/Miami_Heat_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "mb": {
             titulo: "Milwaukee Bucks",
@@ -81,7 +90,8 @@ function franquiasDoLeste(){
             jogadores: ["Kareem Abdul-Jabbar", "Giannis Antetokounmpo"],
             melhor_temporada: "1970-71 (66 vitórias)",
             pior_temporada: "2013-14 (15 vitórias)",
-            playoffs: "2 títulos, último em 2021"
+            playoffs: "2 títulos, último em 2021",
+            logo: `<img src="./assets/imgs/Milwaukee_Bucks_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "nyk": {
             titulo: "New York Knicks",
@@ -89,7 +99,8 @@ function franquiasDoLeste(){
             jogadores: ["Walt Frazier", "Patrick Ewing", "Julius Randle"],
             melhor_temporada: "1992-93 (60 vitórias)",
             pior_temporada: "2014-15 (17 vitórias)",
-            playoffs: "2 títulos, último em 1973"
+            playoffs: "2 títulos, último em 1973",
+            logo: `<img src="./assets/imgs/New_York_Knicks_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "om": {
             titulo: "Orlando Magic",
@@ -97,7 +108,8 @@ function franquiasDoLeste(){
             jogadores: ["Shaquille O’Neal", "Penny Hardaway", "Dwight Howard"],
             melhor_temporada: "2009-10 (59 vitórias)",
             pior_temporada: "2012-13 (20 vitórias)",
-            playoffs: "Finalista em 1995 e 2009"
+            playoffs: "Finalista em 1995 e 2009",
+            logo: `<img src="./assets/imgs/Orlando_Magic_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "p76": {
             titulo: "Philadelphia 76ers",
@@ -105,7 +117,8 @@ function franquiasDoLeste(){
             jogadores: ["Allen Iverson", "Julius Erving", "Joel Embiid"],
             melhor_temporada: "1966-67 (68 vitórias)",
             pior_temporada: "2015-16 (10 vitórias)",
-            playoffs: "3 títulos, último em 1983"
+            playoffs: "3 títulos, último em 1983",
+            logo: `<img src="./assets/imgs/Philadelphia_76ers_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "tr": {
             titulo: "Toronto Raptors",
@@ -113,7 +126,8 @@ function franquiasDoLeste(){
             jogadores: ["Vince Carter", "Kyle Lowry", "Kawhi Leonard"],
             melhor_temporada: "2017-18 (59 vitórias)",
             pior_temporada: "1997-98 (16 vitórias)",
-            playoffs: "Campeão em 2019"
+            playoffs: "Campeão em 2019",
+            logo: `<img src="./assets/imgs/Toronto_Raptors_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "ww": {
             titulo: "Washington Wizards",
@@ -121,7 +135,8 @@ function franquiasDoLeste(){
             jogadores: ["Wes Unseld", "Elvin Hayes", "John Wall"],
             melhor_temporada: "1974-75 (60 vitórias)",
             pior_temporada: "2000-01 (19 vitórias)",
-            playoffs: "Campeão em 1978"
+            playoffs: "Campeão em 1978",
+            logo: `<img src="./assets/imgs/Washington_Wizards_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         }
     }
 
@@ -135,7 +150,7 @@ function franquiasDoLeste(){
                             <p><strong>Melhor temporada:</strong> ${franquia.melhor_temporada}</p>
                             <p><strong>Pior temporada:</strong> ${franquia.pior_temporada}</p>
                             <p><strong>Playoffs:</strong> ${franquia.playoffs}</p>
-                            `
+                            <p style="display:flex; align-items:center;"><strong>Logo:</strong> ${franquia.logo}</p>`
 
     } else {
 
@@ -158,7 +173,8 @@ function franquiasDoOeste(){
             jogadores: ["Dirk Nowitzki", "Luka Dončić"],
             melhor_temporada: "2006-07 (67 vitórias)",
             pior_temporada: "1992-93 (11 vitórias)",
-            playoffs: "Campeão em 2011"
+            playoffs: "Campeão em 2011",
+            logo: `<img src="./assets/imgs/Dallas_Mavericks_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "dn": {
             titulo: "Denver Nuggets",
@@ -166,7 +182,8 @@ function franquiasDoOeste(){
             jogadores: ["Nikola Jokić", "Alex English"],
             melhor_temporada: "2022-23 (53 vitórias)",
             pior_temporada: "1997-98 (11 vitórias)",
-            playoffs: "Campeão em 2023"
+            playoffs: "Campeão em 2023",
+            logo: `<img src="./assets/imgs/Denver_Nuggets_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "gsw": {
             titulo: "Golden State Warriors",
@@ -174,7 +191,8 @@ function franquiasDoOeste(){
             jogadores: ["Stephen Curry", "Klay Thompson", "Kevin Durant"],
             melhor_temporada: "2015-16 (73 vitórias)",
             pior_temporada: "2000-01 (17 vitórias)",
-            playoffs: "7 títulos, último em 2022"
+            playoffs: "7 títulos, último em 2022",
+            logo: `<img src="./assets/imgs/Golden_State_Warriors_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "hr": {
             titulo: "Houston Rockets",
@@ -182,7 +200,8 @@ function franquiasDoOeste(){
             jogadores: ["Hakeem Olajuwon", "James Harden"],
             melhor_temporada: "1993-94 (58 vitórias)",
             pior_temporada: "1982-83 (14 vitórias)",
-            playoffs: "Campeão em 1994 e 1995"
+            playoffs: "Campeão em 1994 e 1995",
+            logo: `<img src="./assets/imgs/Houston_Rockets_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "lac": {
             titulo: "Los Angeles Clippers",
@@ -190,7 +209,8 @@ function franquiasDoOeste(){
             jogadores: ["Chris Paul", "Blake Griffin", "Kawhi Leonard"],
             melhor_temporada: "2013-14 (57 vitórias)",
             pior_temporada: "1986-87 (12 vitórias)",
-            playoffs: "Sem finais da NBA"
+            playoffs: "Sem finais da NBA",
+            logo: `<img src="./assets/imgs/Los_Angeles_Clippers_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "lal": {
             titulo: "Los Angeles Lakers",
@@ -198,7 +218,8 @@ function franquiasDoOeste(){
             jogadores: ["Magic Johnson", "Kobe Bryant", "LeBron James"],
             melhor_temporada: "1971-72 (69 vitórias)",
             pior_temporada: "2015-16 (17 vitórias)",
-            playoffs: "17 títulos, último em 2020"
+            playoffs: "17 títulos, último em 2020",
+            logo: `<img src="./assets/imgs/Los_Angeles_Lakers_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "mg": {
             titulo: "Memphis Grizzlies",
@@ -206,7 +227,8 @@ function franquiasDoOeste(){
             jogadores: ["Pau Gasol", "Ja Morant", "Marc Gasol"],
             melhor_temporada: "2012-13 (56 vitórias)",
             pior_temporada: "2002-03 (28 vitórias)",
-            playoffs: "Sem finais da NBA"
+            playoffs: "Sem finais da NBA",
+            logo: `<img src="./assets/imgs/Memphis_Grizzlies_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "mt": {
             titulo: "Minnesota Timberwolves",
@@ -214,7 +236,8 @@ function franquiasDoOeste(){
             jogadores: ["Kevin Garnett", "Karl-Anthony Towns"],
             melhor_temporada: "2003-04 (58 vitórias)",
             pior_temporada: "2009-10 (15 vitórias)",
-            playoffs: "Finais de conferência em 2004"
+            playoffs: "Finais de conferência em 2004",
+            logo: `<img src="./assets/imgs/Minessota_Timberwolves_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "nop": {
             titulo: "New Orleans Pelicans",
@@ -222,7 +245,8 @@ function franquiasDoOeste(){
             jogadores: ["Chris Paul", "Anthony Davis", "Zion Williamson"],
             melhor_temporada: "2007-08 (56 vitórias)",
             pior_temporada: "2004-05 (18 vitórias)",
-            playoffs: "Sem finais da NBA"
+            playoffs: "Sem finais da NBA",
+            logo: `<img src="./assets/imgs/New_Orleans_Pelicans_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "okc": {
             titulo: "Oklahoma City Thunder",
@@ -230,7 +254,8 @@ function franquiasDoOeste(){
             jogadores: ["Kevin Durant", "Russell Westbrook", "Shai Gilgeous-Alexander"],
             melhor_temporada: "2012-13 (60 vitórias)",
             pior_temporada: "2008-09 (23 vitórias)",
-            playoffs: "Campeão como Seattle SuperSonics em 1979"
+            playoffs: "Campeão como Seattle SuperSonics em 1979",
+            logo: `<img src="./assets/imgs/Oklahoma_City_Thunder_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "ps": {
             titulo: "Phoenix Suns",
@@ -238,7 +263,8 @@ function franquiasDoOeste(){
             jogadores: ["Steve Nash", "Charles Barkley", "Devin Booker"],
             melhor_temporada: "1992-93 (62 vitórias)",
             pior_temporada: "2017-18 (21 vitórias)",
-            playoffs: "Finalista em 1976, 1993 e 2021"
+            playoffs: "Finalista em 1976, 1993 e 2021",
+            logo: `<img src="./assets/imgs/Phoenix_Suns_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "ptb": {
             titulo: "Portland Trail Blazers",
@@ -246,7 +272,8 @@ function franquiasDoOeste(){
             jogadores: ["Clyde Drexler", "Damian Lillard"],
             melhor_temporada: "1990-91 (63 vitórias)",
             pior_temporada: "2005-06 (21 vitórias)",
-            playoffs: "Campeão em 1977"
+            playoffs: "Campeão em 1977",
+            logo: `<img src="./assets/imgs/Portland_Trail_Blazers_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "sk": {
             titulo: "Sacramento Kings",
@@ -254,7 +281,8 @@ function franquiasDoOeste(){
             jogadores: ["Chris Webber", "De'Aaron Fox"],
             melhor_temporada: "2001-02 (61 vitórias)",
             pior_temporada: "2008-09 (17 vitórias)",
-            playoffs: "Campeão em 1951 como Rochester Royals"
+            playoffs: "Campeão em 1951 como Rochester Royals",
+            logo: `<img src="./assets/imgs/Sacramento_Kings_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "sas": {
             titulo: "San Antonio Spurs",
@@ -262,7 +290,8 @@ function franquiasDoOeste(){
             jogadores: ["Tim Duncan", "Tony Parker", "Manu Ginóbili"],
             melhor_temporada: "2015-16 (67 vitórias)",
             pior_temporada: "2022-23 (22 vitórias)",
-            playoffs: "5 títulos, último em 2014"
+            playoffs: "5 títulos, último em 2014",
+            logo: `<img src="./assets/imgs/San_Antonio_Spurs_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         },
         "uj": {
             titulo: "Utah Jazz",
@@ -270,7 +299,8 @@ function franquiasDoOeste(){
             jogadores: ["Karl Malone", "John Stockton", "Donovan Mitchell"],
             melhor_temporada: "1996-97 (64 vitórias)",
             pior_temporada: "1979-80 (24 vitórias)",
-            playoffs: "Finalista em 1997 e 1998"
+            playoffs: "Finalista em 1997 e 1998",
+            logo: `<img src="./assets/imgs/Utah_Jazz_logo.png" alt="" style="height: 50px; padding: 0 10px">`
         }
     };
 
@@ -283,7 +313,8 @@ function franquiasDoOeste(){
                              <p><strong>Principais jogadores:</strong> ${franquia.jogadores.join(", ")}</p>
                              <p><strong>Melhor temporada:</strong> ${franquia.melhor_temporada}</p>
                              <p><strong>Pior temporada:</strong> ${franquia.pior_temporada}</p>
-                             <p><strong>Playoffs:</strong> ${franquia.playoffs}</p>`
+                             <p><strong>Playoffs:</strong> ${franquia.playoffs}</p>
+                             <p style="display:flex; align-items:center;"><strong>Logo:</strong> ${franquia.logo}</p>`
 
     } else {
 
