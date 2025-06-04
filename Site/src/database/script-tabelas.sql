@@ -55,7 +55,9 @@ CREATE TABLE quizPerguntas (
     alternativa2 VARCHAR(60),
     alternativa3 VARCHAR(60),
     alternativa4 VARCHAR(60),
-    alternativaCorreta INT
+    alternativaCorreta INT,
+    fk_quiz INT,
+    FOREIGN KEY (fk_quiz) REFERENCES quiz(idQuiz)
 );
 
 INSERT INTO times (nome) VALUES
