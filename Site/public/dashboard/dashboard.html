@@ -102,13 +102,13 @@
 
     function buscarEExibirResultadosQuiz(fk_usuario) {
         fetch(`/medidas/quiz-resultado/${fk_usuario}`)
-            .then(response => {
+            .then(function(response) {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 return response.json();
             })
-            .then(data => {
+            .then(function (data) {
                 if (data) {
                     exibirGrafico(data.respostasAcertas, data.respostasErradas);
                 } else {
@@ -116,8 +116,8 @@
 
                 }
             })
-            .catch(error => {
-                console.error("Erro ao buscar resultados do quiz:", error);
+            .catch(function(err) {
+                console.error("Erro ao buscar resultados do quiz:", err);
                 alert("Você ainda não realizou o quiz, por favor faça e depois volte aqui para ver seu desempenho!!")
                 window.location = "quiz.html"
             });

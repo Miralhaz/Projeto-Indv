@@ -4,7 +4,7 @@ function buscarResultadosQuiz(req, res) {
     var fk_usuario = req.params.fk_usuario; 
 
     medidaModel.buscarResultadosQuiz(fk_usuario)
-        .then((resultado) => {
+        .then(function (resultado){
             if (resultado.length > 0) {
                 res.json(resultado[0])
             } else {

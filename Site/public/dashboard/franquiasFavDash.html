@@ -100,17 +100,14 @@
 
     function obterDados() {
         fetch('/franquiasFav')
-            .then(response => response.text())
-            .then(text => {
-                console.log('Resposta do servidor:', text);
-                try {
-                    const data = JSON.parse(text);
-                    plotarGraficoPizza(data);
-                } catch (e) {
-                    console.error('Erro ao converter para JSON:', e);
-                }
+            .then(function(response){
+                return response.json()
+                console.log('Resposta do servidor:', response);
             })
-            .catch(err => {
+            .then(function(data){
+                plotarGraficoPizza(data);
+            })
+            .catch(function (err) {
                 console.log('Erro ao obter dados:', err);
             });
     }
@@ -201,17 +198,14 @@
 
     function obterDadosJogadores() {
         fetch('/jogadoresFav')
-            .then(response => response.text())
-            .then(text => {
-                console.log('Resposta do servidor:', text);
-                try {
-                    const data = JSON.parse(text);
-                    plotarGraficoPizzaJogadores(data);
-                } catch (e) {
-                    console.error('Erro ao converter para JSON:', e);
-                }
+            .then(function(response){
+                return response.json()
+                console.log('Resposta do servidor:', response);
             })
-            .catch(err => {
+            .then(function(data){
+                plotarGraficoPizzaJogadores(data);
+            })
+            .catch(function (err) {
                 console.log('Erro ao obter dados:', err);
             });
     }

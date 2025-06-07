@@ -3,6 +3,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   background: #ffffff;
   color: #1d1d1d;
+  overflow: hidden;
 }
 
 /*HEADER*/
@@ -12,25 +13,21 @@ body {
   padding: 16px 0;
   color: white;
 }
-
 .container {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
 }
-
-.container .logo span {
-  font-weight: bold;
-  font-size: larger;
-}
-
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
 }
-
+.container .logo span {
+  font-weight: bold;
+  font-size: larger;
+}
 .img-logo {
   height: 60px;
   width: auto;
@@ -42,12 +39,10 @@ body {
   margin-top: 12px;
   display: flex;
   gap: 32px;
-  flex-wrap: wrap;
   justify-content: center;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 10px;
 }
-
 .navbar a {
   position: relative;
   color: #ffffff;
@@ -57,22 +52,19 @@ body {
   padding: 6px 0;
   transition: color 0.3s ease;
 }
-
 .navbar a::after {
   content: '';
   position: absolute;
-  width: 0%;
+  width: 0;
   height: 2px;
   bottom: 0;
   left: 0;
   background-color: #e03a3e;
   transition: width 0.3s ease;
 }
-
 .navbar a:hover {
   color: #e03a3e;
 }
-
 .navbar a:hover::after {
   width: 100%;
 }
@@ -86,25 +78,21 @@ body {
   min-height: 75.7vh;
   box-sizing: border-box;
 }
-
 .container-franquias {
   width: 90%;
   max-width: 1000px;
   margin: auto;
   justify-items: center;
 }
-
 .container-franquias p {
   font-weight: bold;
   font-size: 18px;
 }
-
 .confs {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-
 .cf-button {
   border-radius: 8px;
   color: #ffffff;
@@ -114,19 +102,15 @@ body {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
 }
-
 .cf-button:hover {
   transform: translateY(-3px);
-  background-color: #8c5210;
+  background-color: #a05f15;
 }
-
 .cf-button:focus {
   outline: none;
 }
-
 .cf-button-click {
   border-radius: 8px;
   color: #ffffff;
@@ -137,16 +121,13 @@ body {
   margin-top: 10px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
-
 .cf-button-click:hover {
   background-color: #ffffff;
   color: #a86415;
   transform: scale(1.05);
 }
-
 #resumo,
 #resumo2 {
   background-color: white;
@@ -158,7 +139,6 @@ body {
   max-width: 500px;
   min-height: 220px;
   box-sizing: border-box;
-  transition: all 0.3s ease;
 }
 
 /* FOOTER */
@@ -170,7 +150,6 @@ body {
   padding: 20px 0;
   font-size: 14px;
 }
-
 .footer p {
   margin: 5px 0;
 }
